@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+.DS_Store
+
+# env files should not be baked into image
+.env
+
+# git stuff
+.git
+.gitignore
+
+# tests / misc
+coverage

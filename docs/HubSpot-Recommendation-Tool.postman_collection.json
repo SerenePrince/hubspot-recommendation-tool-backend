@@ -1,0 +1,293 @@
+{
+  "info": {
+    "name": "HubSpot Recommendation Tool (Backend)",
+    "_postman_id": "6c1c12c2-3a0a-4e73-9d44-51c93c19b9a1",
+    "description": "Surface-level website technology detection + HubSpot-focused recommendations.\n\n## Purpose\nThis API analyzes a **single public URL** and returns:\n- Technologies detected (surface-level)\n- Categories and groups\n- HubSpot recommendations (config-driven)\n- Inbox-style Next Actions (config-driven)\n- Summary counts\n\n## Guardrails\nThis is **not** a recon/scanning tool:\n- No crawling\n- No enumeration\n- No brute forcing\n- No login bypass\n- No private network access (SSRF protections)\n\n## Environment variables used\n- `{{baseUrl}}` (example: http://localhost:3001)\n- `{{exampleUrl}}` (example: https://react.dev/)\n\n## Workflow\n1. Run **Health**\n2. Run **Analyze** (default)\n3. Try Analyze options (pretty / includeEvidence / includeSignals)\n4. Inspect loaded config via **Config** endpoints\n5. Inspect taxonomy via **TechDB**",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "description": "Use this folder to confirm the backend is running.\n\n### When to use\n- Before demos\n- After deployment\n- After changing `.env`\n- After updating the vendor dataset\n\n### Expected behavior\n- Should return HTTP 200\n- Response includes `{ ok: true }`",
+      "item": [
+        {
+          "name": "GET /health (default)",
+          "description": "Health check endpoint.\n\n### Use case\n- Confirm API is reachable.\n\n### Expected response\n- HTTP 200\n- JSON:\n```json\n{ \"ok\": true }\n```",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analyze",
+      "description": "Core endpoint for running a **single-page, surface-level** tech analysis.\n\n## POST /analyze\nThis endpoint:\n1. Fetches a single URL (HTML + headers)\n2. Extracts public signals\n3. Detects technologies using fingerprint patterns\n4. Generates recommendations & next actions\n\n## Query parameters\n### pretty\n- `pretty=1` → pretty-printed JSON\n\n### includeEvidence\n- `includeEvidence=0` → removes evidence from detections (and any grouped detection views)\n\n### includeSignals\n- `includeSignals=1` → includes safe signal summaries\n  - meta keys preview\n  - script src preview\n  - cookie names\n\n> Raw HTML is **never** returned.\n\n## Notes\n- Only one URL is fetched.\n- SSRF protections block localhost/private IPs.\n- Response is cached by URL for a short TTL (configurable).",
+      "item": [
+        {
+          "name": "POST /analyze (default)",
+          "description": "Runs analysis on the provided URL.\n\n### Recommended usage\nUse this request for most internal workflows.\n\n### Body\n```json\n{ \"url\": \"{{exampleUrl}}\" }\n```\n\n### Expected response\n- `detections[]`\n- `recommendations[]`\n- `nextActions[]`\n- `summary`\n\n### Common issues\n- If URL is blocked (localhost/private), you will see an error.\n- If the page is too large, it may exceed `MAX_FETCH_BYTES`.\n- If the server is slow, it may exceed `FETCH_TIMEOUT_MS`.",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/analyze",
+              "host": ["{{baseUrl}}"],
+              "path": ["analyze"]
+            }
+          }
+        },
+        {
+          "name": "POST /analyze?pretty=1",
+          "description": "Same as default analysis, but pretty-prints JSON.\n\n### Use case\n- Demoing output\n- Reviewing response manually\n\n### Query\n- `pretty=1`",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/analyze?pretty=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["analyze"],
+              "query": [{ "key": "pretty", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "POST /analyze?includeEvidence=0 (no evidence)",
+          "description": "Runs analysis but removes evidence arrays.\n\n### Use case\n- Client-facing output\n- Smaller payloads\n- Avoid overwhelming non-technical audiences\n\n### Query\n- `includeEvidence=0`\n\n### What changes\nDetections will not include `evidence` fields.\nEverything else remains:\n- recommendations\n- nextActions\n- summary",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/analyze?includeEvidence=0",
+              "host": ["{{baseUrl}}"],
+              "path": ["analyze"],
+              "query": [{ "key": "includeEvidence", "value": "0" }]
+            }
+          }
+        },
+        {
+          "name": "POST /analyze?includeSignals=1 (safe signal summaries)",
+          "description": "Runs analysis and returns safe signal summaries.\n\n### Use case\n- Debug why detections did/didn't trigger\n- Validate that the page returns expected signals\n\n### Query\n- `includeSignals=1`\n\n### Returned under\n`signals` key, such as:\n- metaKeys (first N)\n- scriptSrcPreview (first N)\n- cookieNames\n\n> Raw HTML is never returned.",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/analyze?includeSignals=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["analyze"],
+              "query": [{ "key": "includeSignals", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "POST /analyze?pretty=1&includeEvidence=0&includeSignals=1 (full combo)",
+          "description": "Most useful request for demos and debugging.\n\n### Use case\n- Pretty output for readability\n- No evidence to keep response clean\n- Signals included for debugging\n\n### Query\n- `pretty=1`\n- `includeEvidence=0`\n- `includeSignals=1`",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/analyze?pretty=1&includeEvidence=0&includeSignals=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["analyze"],
+              "query": [
+                { "key": "pretty", "value": "1" },
+                { "key": "includeEvidence", "value": "0" },
+                { "key": "includeSignals", "value": "1" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /analyze (validation error example - missing url)",
+          "description": "Demonstrates validation behavior.\n\n### Use case\n- Confirm request body validation\n- Example error response\n\n### Expected response\nHTTP 400\n```json\n{ \"ok\": false, \"error\": \"Missing or invalid 'url' in request body\" }\n```",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": {
+              "raw": "{{baseUrl}}/analyze?pretty=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["analyze"],
+              "query": [{ "key": "pretty", "value": "1" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "TechDB",
+      "description": "TechDB endpoints expose local dataset metadata.\n\n### Use case\n- See which categories/groups exist (for mapping rules)\n- Validate that the vendor dataset is loading correctly",
+      "item": [
+        {
+          "name": "GET /techdb/taxonomy (default)",
+          "description": "Returns categories and groups from the loaded dataset.\n\n### Use case\n- Find category IDs/names and group IDs/names for mapping rules\n\n### Expected response\nIncludes:\n- `categories`\n- `groups`\n- meta counts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/techdb/taxonomy",
+              "host": ["{{baseUrl}}"],
+              "path": ["techdb", "taxonomy"]
+            }
+          }
+        },
+        {
+          "name": "GET /techdb/taxonomy?pretty=1",
+          "description": "Same as taxonomy, but pretty printed.\n\n### Query\n- `pretty=1`",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/techdb/taxonomy?pretty=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["techdb", "taxonomy"],
+              "query": [{ "key": "pretty", "value": "1" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Config - Recommendations",
+      "description": "Inspect and validate loaded recommendation mapping.\n\nMapping file:\n- `data/alternatives/hubspot-mapping.json`\n\n### Use case\n- Confirm mapping is valid\n- Confirm rule keys exist\n- Check counts\n- Optionally include full mapping in response",
+      "item": [
+        {
+          "name": "GET /config/recommendations (default)",
+          "description": "Returns a summary of the loaded mapping.\n\n### Expected response\n- `ok: true`\n- mapping metadata counts\n- any validation warnings/errors\n\n### Notes\nUse this after editing mapping JSON.",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/config/recommendations",
+              "host": ["{{baseUrl}}"],
+              "path": ["config", "recommendations"]
+            }
+          }
+        },
+        {
+          "name": "GET /config/recommendations?pretty=1",
+          "description": "Pretty printed mapping summary.\n\n### Query\n- `pretty=1`",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/config/recommendations?pretty=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["config", "recommendations"],
+              "query": [{ "key": "pretty", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "GET /config/recommendations?include=1 (include full mapping)",
+          "description": "Returns full mapping JSON.\n\n### Query\n- `include=1`\n\n### Use case\n- Debugging\n- Confirm exact rule text loaded\n\n> Avoid exposing this publicly if your mapping contains internal positioning language.",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/config/recommendations?include=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["config", "recommendations"],
+              "query": [{ "key": "include", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "GET /config/recommendations?pretty=1&include=1 (full combo)",
+          "description": "Pretty printed full mapping.\n\n### Query\n- `pretty=1`\n- `include=1`",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/config/recommendations?pretty=1&include=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["config", "recommendations"],
+              "query": [
+                { "key": "pretty", "value": "1" },
+                { "key": "include", "value": "1" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Config - Next Actions",
+      "description": "Inspect and validate loaded next-actions configuration.\n\nConfig file:\n- `data/alternatives/inbox-next-actions.json`\n\n### Use case\n- Confirm rules are valid\n- Confirm max output count\n- Include full rules for debugging",
+      "item": [
+        {
+          "name": "GET /config/next-actions (default)",
+          "description": "Returns summary of next-actions configuration.\n\n### Expected\n- ok: true\n- rules count\n- max actions\n- validation results\n\nUse after editing next-actions config.",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/config/next-actions",
+              "host": ["{{baseUrl}}"],
+              "path": ["config", "next-actions"]
+            }
+          }
+        },
+        {
+          "name": "GET /config/next-actions?pretty=1",
+          "description": "Pretty printed summary.\n\n### Query\n- `pretty=1`",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/config/next-actions?pretty=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["config", "next-actions"],
+              "query": [{ "key": "pretty", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "GET /config/next-actions?include=1 (include full config)",
+          "description": "Returns full next-actions config.\n\n### Query\n- `include=1`\n\n### Use case\n- Debugging\n- Confirm exact rule text loaded",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/config/next-actions?include=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["config", "next-actions"],
+              "query": [{ "key": "include", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "GET /config/next-actions?pretty=1&include=1 (full combo)",
+          "description": "Pretty printed full config.\n\n### Query\n- `pretty=1`\n- `include=1`",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/config/next-actions?pretty=1&include=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["config", "next-actions"],
+              "query": [
+                { "key": "pretty", "value": "1" },
+                { "key": "include", "value": "1" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
