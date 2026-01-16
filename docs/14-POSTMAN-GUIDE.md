@@ -54,6 +54,23 @@ The collection is organized into folders:
 
 ## 3. Core Request: Analyze
 
+### Compact Analyze (UI / frontend)
+
+If you are building a React (or any web) UI, use the **GET** endpoint. It returns a compact, presentation-friendly payload:
+
+```
+GET {{baseUrl}}/analyze?url={{exampleUrl}}
+```
+
+Optional:
+
+```
+GET {{baseUrl}}/analyze?url={{exampleUrl}}&pretty=1
+GET {{baseUrl}}/analyze?url={{exampleUrl}}&includeMeta=1
+```
+
+`includeMeta=1` adds lightweight metadata (cache + timings + fetch summary).
+
 ### Default Analyze
 
 **Request**

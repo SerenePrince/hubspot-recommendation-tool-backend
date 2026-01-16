@@ -1,16 +1,31 @@
-# HubSpot Recommendation Tool (Backend)
+# HubSpot Technology Intelligence Platform (Backend)
 
-Surface-level technology detection + HubSpot-focused recommendations.
+Surface-level technology detection with **HubSpot-focused marketing intelligence**.
 
-This backend:
+This backend analyzes a single public website, identifies the technologies in use,
+and translates those findings into **HubSpot product recommendations and actionable next steps**.
 
-- Fetches a **single URL** (HTML + response headers)
+It is designed for:
+
+- sales & pre-sales intelligence
+- marketing strategy and audits
+- CRM enrichment (including HubSpot itself)
+- future frontend dashboards
+
+---
+
+## What This Backend Does
+
+- Fetches a **single public URL** (HTML + response headers only)
 - Detects technologies using a fingerprint dataset (Webappalyzer-style patterns)
-- Enriches detections with categories/groups
-- Produces HubSpot recommendations + Inbox-style **Next Actions**
+- Normalizes detections into **categories and groups**
+- Applies **client-configurable HubSpot recommendation rules**
+- Generates Inbox-style **Next Actions**
 - Exposes both:
-  - HTTP API (for future frontend & integrations)
-  - CLI command (for internal use / audits)
+  - an HTTP API (for frontend & integrations)
+  - a CLI (for internal audits and client reports)
+
+This is **not** a crawler or scanner — it is intentionally surface-level and safe.
 
 ---
 
@@ -18,7 +33,7 @@ This backend:
 
 Full documentation lives in `backend/docs/`.
 
-### Table of contents
+### Table of Contents
 
 0. [Overview](docs/00-OVERVIEW.md)
 1. [Quickstart](docs/01-QUICKSTART.md)
@@ -44,9 +59,9 @@ Full documentation lives in `backend/docs/`.
 
 ---
 
-## Data / Fingerprints
+## Dataset / Fingerprints
 
-This project expects a vendor dataset at:
+This project expects a vendor fingerprint dataset at:
 
 ```
 
@@ -54,7 +69,7 @@ This project expects a vendor dataset at:
 
 ```
 
-That folder must contain:
+That directory must contain:
 
 - `categories.json`
 - `groups.json`
@@ -64,19 +79,19 @@ Example structure:
 
 ```
 
-hubspot-recommendation-tool/
-backend/
-frontend/
-data/
-vendor/
-webappanalyzer/
-src/
-categories.json
-groups.json
-technologies/
-a.json
-...
-_.json
+hubspot-technology-intelligence/
+├─ backend/
+├─ frontend/
+├─ data/
+│  └─ vendor/
+│     └─ webappanalyzer/
+│        └─ src/
+│           ├─ categories.json
+│           ├─ groups.json
+│           └─ technologies/
+│              ├─ a.json
+│              ├─ ...
+│              └─ _.json
 
 ```
 
@@ -94,7 +109,7 @@ npm install
 
 ## Environment Setup
 
-Create `backend/.env`:
+Create `backend/.env` based on `.env.example`:
 
 ```env
 PORT=3001
@@ -124,7 +139,24 @@ Health check:
 curl -s http://localhost:3001/health
 ```
 
-Analyze a URL:
+---
+
+## API Usage
+
+### Compact UI / Client Endpoint
+
+```bash
+curl -s "http://localhost:3001/analyze?url=https://react.dev/&pretty=1"
+```
+
+Returns:
+
+- detected technologies
+- HubSpot recommendations
+- next actions
+- optional metadata
+
+### Full Intelligence Endpoint
 
 ```bash
 curl -s -X POST "http://localhost:3001/analyze?pretty=1" \
@@ -132,9 +164,9 @@ curl -s -X POST "http://localhost:3001/analyze?pretty=1" \
   -d '{"url":"https://react.dev/"}'
 ```
 
-### Analyze Options
+Returns the **complete professional report** including evidence and signals.
 
-Query parameters:
+#### POST Options
 
 | Param               | Purpose                       |
 | ------------------- | ----------------------------- |
@@ -142,7 +174,7 @@ Query parameters:
 | `includeEvidence=0` | Remove evidence arrays        |
 | `includeSignals=1`  | Include safe signal summaries |
 
-> Raw HTML is **never** returned by the API.
+> Raw HTML is **never returned** by the API.
 
 ---
 
@@ -154,47 +186,49 @@ Run an analysis without starting the server:
 npm run cli -- https://react.dev/
 ```
 
-Show more evidence:
+Include all evidence:
 
 ```bash
 npm run cli -- https://react.dev/ --all-evidence
 ```
 
-View available category/group taxonomy:
+View category & group taxonomy:
 
 ```bash
 npm run cli:tax
 ```
 
+The CLI uses the **same detection and recommendation engines** as the API.
+
 ---
 
-## Configuration Files
+## Configuration (Client-Owned Logic)
 
-### Recommendations Mapping
+All business logic for recommendations lives outside the codebase.
 
-File:
+### HubSpot Recommendations
 
 ```
-../data/alternatives/hubspot-mapping.json
+data/alternatives/hubspot-mapping.json
 ```
 
-Supported rule keys:
+Supported rule types:
 
 - `byTechnology`
 - `byCategoryId`, `byCategory`
 - `byGroupId`, `byGroup`
 
-Both **ID-based** and **name-based** rules are supported.
+ID-based rules are preferred for stability.
 
-### Next Actions Rules
+---
 
-File:
+### Next Actions
 
 ```
-../data/alternatives/inbox-next-actions.json
+data/alternatives/inbox-next-actions.json
 ```
 
-Controls the “Next Actions” section shown in reports.
+Defines Inbox-style actions based on recommended HubSpot products.
 
 ---
 
@@ -210,7 +244,7 @@ curl -s "http://localhost:3001/techdb/taxonomy?pretty=1"
 
 ---
 
-## Notes & Guardrails
+## Guardrails & Security
 
 - **Single-page fetch only**
 - **No crawling**
@@ -229,7 +263,19 @@ curl -s "http://localhost:3001/techdb/taxonomy?pretty=1"
   data/alternatives/
   ```
 
-- After modifying config files:
-
+- After modifying configuration:
   - restart the backend
-  - or run `npm run smoke` to verify
+  - or run `npm run smoke` to validate
+
+---
+
+## Summary
+
+This backend transforms raw technology detection into **actionable HubSpot intelligence**.
+
+It helps teams understand:
+
+- what a company already uses
+- what that implies about their maturity
+- how HubSpot should be positioned
+- what concrete next steps to recommend

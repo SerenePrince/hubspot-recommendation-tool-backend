@@ -15,7 +15,7 @@ const config = {
 
   dataRoot: path.resolve(
     process.cwd(),
-    str(process.env.DATA_ROOT, "../data/vendor/webappanalyzer/src")
+    str(process.env.DATA_ROOT, "../data/vendor/webappanalyzer/src"),
   ),
 
   cache: {

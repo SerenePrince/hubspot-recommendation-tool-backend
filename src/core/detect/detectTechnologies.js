@@ -118,7 +118,7 @@ function mergeDetections(detections) {
   }
 
   return Array.from(byName.values()).sort(
-    (a, b) => b.confidence - a.confidence
+    (a, b) => b.confidence - a.confidence,
   );
 }
 

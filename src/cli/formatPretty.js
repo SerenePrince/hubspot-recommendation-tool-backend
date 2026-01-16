@@ -1,7 +1,9 @@
 // backend/src/cli/formatPretty.js
 
 function formatPrettyReport(report, options = {}) {
-  const maxEvidence = options.allEvidence ? Infinity : options.maxEvidence ?? 3;
+  const maxEvidence = options.allEvidence
+    ? Infinity
+    : (options.maxEvidence ?? 3);
   const lines = [];
 
   lines.push(`URL: ${report.finalUrl || report.url}`);
@@ -9,7 +11,7 @@ function formatPrettyReport(report, options = {}) {
     lines.push(
       `Fetch: ${report.fetch.status} • ${
         report.fetch.contentType || "unknown"
-      } • ${report.fetch.bytes} bytes • ${report.fetch.timingMs}ms`
+      } • ${report.fetch.bytes} bytes • ${report.fetch.timingMs}ms`,
     );
     const h = report.fetch.headers || {};
     const headerBits = [];
@@ -26,7 +28,7 @@ function formatPrettyReport(report, options = {}) {
     const topGroups = Object.entries(report.summary.countsByGroup).slice(0, 5);
     if (topGroups.length) {
       lines.push(
-        `Top areas: ${topGroups.map(([k, v]) => `${k} (${v})`).join(" • ")}`
+        `Top areas: ${topGroups.map(([k, v]) => `${k} (${v})`).join(" • ")}`,
       );
     }
   }
@@ -48,7 +50,7 @@ function formatPrettyReport(report, options = {}) {
 
   // Sort groups and techs
   const groupNames = Array.from(byGroup.keys()).sort((a, b) =>
-    a.localeCompare(b)
+    a.localeCompare(b),
   );
   for (const gName of groupNames) {
     lines.push("");
@@ -90,7 +92,7 @@ function formatPrettyReport(report, options = {}) {
           if (e.pattern) {
             const extra = e.detail ? ` (${e.detail})` : "";
             lines.push(
-              `  evidence: dom selector "${e.selector}" matched ${e.pattern}${extra}`
+              `  evidence: dom selector "${e.selector}" matched ${e.pattern}${extra}`,
             );
           } else {
             lines.push(`  evidence: dom selector "${e.selector}" present`);

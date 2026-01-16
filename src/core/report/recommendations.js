@@ -41,7 +41,7 @@ function recKey(rec) {
 function getDefaultMappingPath() {
   return path.resolve(
     __dirname,
-    "../../../../data/alternatives/hubspot-mapping.json"
+    "../../../../data/alternatives/hubspot-mapping.json",
   );
 }
 
@@ -73,7 +73,7 @@ function buildRecommendations(detections, options = {}) {
 
       if (!validation.ok) {
         console.error(
-          "Recommendation mapping is invalid. Falling back to empty mapping."
+          "Recommendation mapping is invalid. Falling back to empty mapping.",
         );
         for (const err of validation.errors.slice(0, 50)) {
           console.error(" -", err);
@@ -84,7 +84,7 @@ function buildRecommendations(detections, options = {}) {
       }
     } catch (e) {
       console.error(
-        "Failed to load recommendation mapping. Falling back to empty mapping."
+        "Failed to load recommendation mapping. Falling back to empty mapping.",
       );
       console.error(e?.message || e);
       cachedMapping = {};

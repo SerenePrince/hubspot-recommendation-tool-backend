@@ -10,7 +10,7 @@ const router = express.Router();
 function getDefaultConfigPath() {
   return path.resolve(
     __dirname,
-    "../../../../data/alternatives/inbox-next-actions.json"
+    "../../../../data/alternatives/inbox-next-actions.json",
   );
 }
 
@@ -33,7 +33,7 @@ function computeMeta(cfg) {
   const always = Array.isArray(cfg.always) ? cfg.always : [];
   const ruleActions = rules.reduce(
     (sum, r) => sum + (Array.isArray(r.actions) ? r.actions.length : 0),
-    0
+    0,
   );
 
   return {

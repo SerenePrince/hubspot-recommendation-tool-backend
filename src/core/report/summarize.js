@@ -34,7 +34,7 @@ function mapToSortedObject(map) {
       // sort by count desc, then name asc
       if (b[1] !== a[1]) return b[1] - a[1];
       return a[0].localeCompare(b[0]);
-    })
+    }),
   );
 }
 

@@ -38,13 +38,13 @@ async function main() {
   console.log("");
   console.log("Mapping tips:");
   console.log(
-    "- Use category *names* in byCategory (easier to read), OR ids if you want stability."
+    "- Use category *names* in byCategory (easier to read), OR ids if you want stability.",
   );
   console.log(
-    "- Use group *names* in byGroup (easier to read), OR ids if you want stability."
+    "- Use group *names* in byGroup (easier to read), OR ids if you want stability.",
   );
   console.log(
-    "- If you switch to ids later, we can support both with a small update."
+    "- If you switch to ids later, we can support both with a small update.",
   );
 }
 

@@ -28,7 +28,7 @@ function validateSection(mapping, sectionName, errors) {
 
   if (!section || typeof section !== "object" || Array.isArray(section)) {
     errors.push(
-      `${sectionName} must be an object of { key: RecommendationItem[] }.`
+      `${sectionName} must be an object of { key: RecommendationItem[] }.`,
     );
     return;
   }
@@ -37,14 +37,14 @@ function validateSection(mapping, sectionName, errors) {
     if (!Array.isArray(arr)) {
       errors.push(
         `${sectionName}.${jsonKey(
-          key
-        )} must be an array of recommendation items.`
+          key,
+        )} must be an array of recommendation items.`,
       );
       continue;
     }
 
     arr.forEach((item, idx) =>
-      validateItem(item, `${sectionName}.${jsonKey(key)}[${idx}]`, errors)
+      validateItem(item, `${sectionName}.${jsonKey(key)}[${idx}]`, errors),
     );
   }
 }

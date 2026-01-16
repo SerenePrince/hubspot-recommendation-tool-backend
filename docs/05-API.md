@@ -2,6 +2,65 @@
 
 Base URL (local): `http://localhost:3001`
 
+## GET /analyze
+
+Returns a **compact, UI-friendly report** for a single URL.
+
+This is the recommended endpoint for a React (or any web) frontend because it returns:
+- a clean list of detected technologies
+- HubSpot recommendations (config-driven)
+- Inbox-style next actions (config-driven)
+
+### Request
+
+Query params:
+
+- `url` (required) → the URL to analyze
+- `pretty=1` → pretty JSON output
+- `includeMeta=1` → include lightweight metadata (cache + timings + fetch summary)
+
+### Response (shape overview)
+
+`meta` is included only when `includeMeta=1`.
+
+```json
+{
+  "ok": true,
+  "url": "https://react.dev/",
+  "finalUrl": "https://react.dev/",
+  "count": 3,
+  "technologies": [
+    {
+      "name": "React",
+      "confidence": 100,
+      "version": null,
+      "categories": [{ "id": 12, "name": "JavaScript frameworks" }],
+      "groups": [{ "id": 2, "name": "Frontend" }]
+    }
+  ],
+  "byGroup": {
+    "Frontend": ["React", "Next.js"],
+    "Analytics": ["Google Analytics"]
+  },
+  "hubspot": {
+    "recommendations": [{ "hubspotProduct": "Marketing Hub", "title": "..." }],
+    "nextActions": [{ "title": "...", "priority": "high" }]
+  },
+  "meta": {
+    "cache": { "hit": false },
+    "timings": { "analysisMs": 200, "totalMs": 400 },
+    "fetch": { "status": 200, "contentType": "text/html" }
+  }
+}
+```
+
+### Example curl
+
+```bash
+curl -s "http://localhost:3001/analyze?url=https://react.dev/&pretty=1"
+curl -s "http://localhost:3001/analyze?url=https://react.dev/&includeMeta=1&pretty=1"
+```
+
 ## POST /analyze
 
 Analyze a single URL.

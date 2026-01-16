@@ -17,124 +17,459 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/health",
-              "host": ["{{baseUrl}}"],
-              "path": ["health"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('service field exists', function () { pm.expect(body).to.have.property('service'); });"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
     {
       "name": "Analyze",
-      "description": "Core endpoint for running a **single-page, surface-level** tech analysis.\n\n## POST /analyze\nThis endpoint:\n1. Fetches a single URL (HTML + headers)\n2. Extracts public signals\n3. Detects technologies using fingerprint patterns\n4. Generates recommendations & next actions\n\n## Query parameters\n### pretty\n- `pretty=1` → pretty-printed JSON\n\n### includeEvidence\n- `includeEvidence=0` → removes evidence from detections (and any grouped detection views)\n\n### includeSignals\n- `includeSignals=1` → includes safe signal summaries\n  - meta keys preview\n  - script src preview\n  - cookie names\n\n> Raw HTML is **never** returned.\n\n## Notes\n- Only one URL is fetched.\n- SSRF protections block localhost/private IPs.\n- Response is cached by URL for a short TTL (configurable).",
+      "description": "Core endpoint for running a **single-page, surface-level** tech analysis.\n\n## POST /analyze\nThis endpoint:\n1. Fetches a single URL (HTML + headers)\n2. Extracts public signals\n3. Detects technologies using fingerprint patterns\n4. Generates recommendations & next actions\n\n## Query parameters\n### pretty\n- `pretty=1` \u2192 pretty-printed JSON\n\n### includeEvidence\n- `includeEvidence=0` \u2192 removes evidence from detections (and any grouped detection views)\n\n### includeSignals\n- `includeSignals=1` \u2192 includes safe signal summaries\n  - meta keys preview\n  - script src preview\n  - cookie names\n\n> Raw HTML is **never** returned.\n\n## Notes\n- Only one URL is fetched.\n- SSRF protections block localhost/private IPs.\n- Response is cached by URL for a short TTL (configurable).",
       "item": [
+        {
+          "name": "GET /analyze (compact)",
+          "description": "Lightweight, frontend-friendly analyze endpoint (GET).",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analyze?url={{exampleUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "{{exampleUrl}}"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('technologies is an array', function () { pm.expect(body.technologies).to.be.an('array'); });",
+                  "pm.test('hubspot object exists', function () { pm.expect(body).to.have.property('hubspot'); });",
+                  "pm.test('hubspot.recommendations is an array', function () { pm.expect(body.hubspot.recommendations).to.be.an('array'); });",
+                  "pm.test('hubspot.nextActions is an array', function () { pm.expect(body.hubspot.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /analyze?pretty=1 (compact)",
+          "description": "Lightweight, frontend-friendly analyze endpoint (GET).",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analyze?url={{exampleUrl}}&pretty=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "{{exampleUrl}}"
+                },
+                {
+                  "key": "pretty",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('technologies is an array', function () { pm.expect(body.technologies).to.be.an('array'); });",
+                  "pm.test('hubspot object exists', function () { pm.expect(body).to.have.property('hubspot'); });",
+                  "pm.test('hubspot.recommendations is an array', function () { pm.expect(body.hubspot.recommendations).to.be.an('array'); });",
+                  "pm.test('hubspot.nextActions is an array', function () { pm.expect(body.hubspot.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /analyze?includeMeta=1 (compact + meta)",
+          "description": "Lightweight, frontend-friendly analyze endpoint (GET).",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analyze?url={{exampleUrl}}&includeMeta=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "{{exampleUrl}}"
+                },
+                {
+                  "key": "includeMeta",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('technologies is an array', function () { pm.expect(body.technologies).to.be.an('array'); });",
+                  "pm.test('hubspot object exists', function () { pm.expect(body).to.have.property('hubspot'); });",
+                  "pm.test('hubspot.recommendations is an array', function () { pm.expect(body.hubspot.recommendations).to.be.an('array'); });",
+                  "pm.test('hubspot.nextActions is an array', function () { pm.expect(body.hubspot.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
         {
           "name": "POST /analyze (default)",
           "description": "Runs analysis on the provided URL.\n\n### Recommended usage\nUse this request for most internal workflows.\n\n### Body\n```json\n{ \"url\": \"{{exampleUrl}}\" }\n```\n\n### Expected response\n- `detections[]`\n- `recommendations[]`\n- `nextActions[]`\n- `summary`\n\n### Common issues\n- If URL is blocked (localhost/private), you will see an error.\n- If the page is too large, it may exceed `MAX_FETCH_BYTES`.\n- If the server is slow, it may exceed `FETCH_TIMEOUT_MS`.",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/analyze",
-              "host": ["{{baseUrl}}"],
-              "path": ["analyze"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('detections is an array', function () { pm.expect(body.detections).to.be.an('array'); });",
+                  "pm.test('recommendations is an array', function () { pm.expect(body.recommendations).to.be.an('array'); });",
+                  "pm.test('nextActions is an array', function () { pm.expect(body.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "POST /analyze?pretty=1",
           "description": "Same as default analysis, but pretty-prints JSON.\n\n### Use case\n- Demoing output\n- Reviewing response manually\n\n### Query\n- `pretty=1`",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/analyze?pretty=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["analyze"],
-              "query": [{ "key": "pretty", "value": "1" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "1"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('detections is an array', function () { pm.expect(body.detections).to.be.an('array'); });",
+                  "pm.test('recommendations is an array', function () { pm.expect(body.recommendations).to.be.an('array'); });",
+                  "pm.test('nextActions is an array', function () { pm.expect(body.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "POST /analyze?includeEvidence=0 (no evidence)",
           "description": "Runs analysis but removes evidence arrays.\n\n### Use case\n- Client-facing output\n- Smaller payloads\n- Avoid overwhelming non-technical audiences\n\n### Query\n- `includeEvidence=0`\n\n### What changes\nDetections will not include `evidence` fields.\nEverything else remains:\n- recommendations\n- nextActions\n- summary",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/analyze?includeEvidence=0",
-              "host": ["{{baseUrl}}"],
-              "path": ["analyze"],
-              "query": [{ "key": "includeEvidence", "value": "0" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "includeEvidence",
+                  "value": "0"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('detections is an array', function () { pm.expect(body.detections).to.be.an('array'); });",
+                  "pm.test('recommendations is an array', function () { pm.expect(body.recommendations).to.be.an('array'); });",
+                  "pm.test('nextActions is an array', function () { pm.expect(body.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "POST /analyze?includeSignals=1 (safe signal summaries)",
           "description": "Runs analysis and returns safe signal summaries.\n\n### Use case\n- Debug why detections did/didn't trigger\n- Validate that the page returns expected signals\n\n### Query\n- `includeSignals=1`\n\n### Returned under\n`signals` key, such as:\n- metaKeys (first N)\n- scriptSrcPreview (first N)\n- cookieNames\n\n> Raw HTML is never returned.",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/analyze?includeSignals=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["analyze"],
-              "query": [{ "key": "includeSignals", "value": "1" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "includeSignals",
+                  "value": "1"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('detections is an array', function () { pm.expect(body.detections).to.be.an('array'); });",
+                  "pm.test('recommendations is an array', function () { pm.expect(body.recommendations).to.be.an('array'); });",
+                  "pm.test('nextActions is an array', function () { pm.expect(body.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "POST /analyze?pretty=1&includeEvidence=0&includeSignals=1 (full combo)",
           "description": "Most useful request for demos and debugging.\n\n### Use case\n- Pretty output for readability\n- No evidence to keep response clean\n- Signals included for debugging\n\n### Query\n- `pretty=1`\n- `includeEvidence=0`\n- `includeSignals=1`",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"{{exampleUrl}}\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/analyze?pretty=1&includeEvidence=0&includeSignals=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["analyze"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
               "query": [
-                { "key": "pretty", "value": "1" },
-                { "key": "includeEvidence", "value": "0" },
-                { "key": "includeSignals", "value": "1" }
+                {
+                  "key": "pretty",
+                  "value": "1"
+                },
+                {
+                  "key": "includeEvidence",
+                  "value": "0"
+                },
+                {
+                  "key": "includeSignals",
+                  "value": "1"
+                }
               ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('detections is an array', function () { pm.expect(body.detections).to.be.an('array'); });",
+                  "pm.test('recommendations is an array', function () { pm.expect(body.recommendations).to.be.an('array'); });",
+                  "pm.test('nextActions is an array', function () { pm.expect(body.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "POST /analyze (validation error example - missing url)",
           "description": "Demonstrates validation behavior.\n\n### Use case\n- Confirm request body validation\n- Example error response\n\n### Expected response\nHTTP 400\n```json\n{ \"ok\": false, \"error\": \"Missing or invalid 'url' in request body\" }\n```",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
             "url": {
               "raw": "{{baseUrl}}/analyze?pretty=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["analyze"],
-              "query": [{ "key": "pretty", "value": "1" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "1"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('detections is an array', function () { pm.expect(body.detections).to.be.an('array'); });",
+                  "pm.test('recommendations is an array', function () { pm.expect(body.recommendations).to.be.an('array'); });",
+                  "pm.test('nextActions is an array', function () { pm.expect(body.nextActions).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -149,10 +484,31 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/techdb/taxonomy",
-              "host": ["{{baseUrl}}"],
-              "path": ["techdb", "taxonomy"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "techdb",
+                "taxonomy"
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('categories is an array', function () { pm.expect(body.categories).to.be.an('array'); });",
+                  "pm.test('groups is an array', function () { pm.expect(body.groups).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "GET /techdb/taxonomy?pretty=1",
@@ -161,11 +517,37 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/techdb/taxonomy?pretty=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["techdb", "taxonomy"],
-              "query": [{ "key": "pretty", "value": "1" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "techdb",
+                "taxonomy"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "1"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('categories is an array', function () { pm.expect(body.categories).to.be.an('array'); });",
+                  "pm.test('groups is an array', function () { pm.expect(body.groups).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -180,10 +562,30 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/config/recommendations",
-              "host": ["{{baseUrl}}"],
-              "path": ["config", "recommendations"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config",
+                "recommendations"
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('config response has summary', function () { pm.expect(body).to.have.property('summary'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "GET /config/recommendations?pretty=1",
@@ -192,11 +594,36 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/config/recommendations?pretty=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["config", "recommendations"],
-              "query": [{ "key": "pretty", "value": "1" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config",
+                "recommendations"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "1"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('config response has summary', function () { pm.expect(body).to.have.property('summary'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "GET /config/recommendations?include=1 (include full mapping)",
@@ -205,11 +632,36 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/config/recommendations?include=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["config", "recommendations"],
-              "query": [{ "key": "include", "value": "1" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config",
+                "recommendations"
+              ],
+              "query": [
+                {
+                  "key": "include",
+                  "value": "1"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('config response has summary', function () { pm.expect(body).to.have.property('summary'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "GET /config/recommendations?pretty=1&include=1 (full combo)",
@@ -218,14 +670,40 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/config/recommendations?pretty=1&include=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["config", "recommendations"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config",
+                "recommendations"
+              ],
               "query": [
-                { "key": "pretty", "value": "1" },
-                { "key": "include", "value": "1" }
+                {
+                  "key": "pretty",
+                  "value": "1"
+                },
+                {
+                  "key": "include",
+                  "value": "1"
+                }
               ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('config response has summary', function () { pm.expect(body).to.have.property('summary'); });"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -240,10 +718,30 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/config/next-actions",
-              "host": ["{{baseUrl}}"],
-              "path": ["config", "next-actions"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config",
+                "next-actions"
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('config response has summary', function () { pm.expect(body).to.have.property('summary'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "GET /config/next-actions?pretty=1",
@@ -252,11 +750,36 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/config/next-actions?pretty=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["config", "next-actions"],
-              "query": [{ "key": "pretty", "value": "1" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config",
+                "next-actions"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "1"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('config response has summary', function () { pm.expect(body).to.have.property('summary'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "GET /config/next-actions?include=1 (include full config)",
@@ -265,11 +788,36 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/config/next-actions?include=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["config", "next-actions"],
-              "query": [{ "key": "include", "value": "1" }]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config",
+                "next-actions"
+              ],
+              "query": [
+                {
+                  "key": "include",
+                  "value": "1"
+                }
+              ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('config response has summary', function () { pm.expect(body).to.have.property('summary'); });"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "GET /config/next-actions?pretty=1&include=1 (full combo)",
@@ -278,14 +826,40 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/config/next-actions?pretty=1&include=1",
-              "host": ["{{baseUrl}}"],
-              "path": ["config", "next-actions"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config",
+                "next-actions"
+              ],
               "query": [
-                { "key": "pretty", "value": "1" },
-                { "key": "include", "value": "1" }
+                {
+                  "key": "pretty",
+                  "value": "1"
+                },
+                {
+                  "key": "include",
+                  "value": "1"
+                }
               ]
             }
-          }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('config response has summary', function () { pm.expect(body).to.have.property('summary'); });"
+                ]
+              }
+            }
+          ]
         }
       ]
     }

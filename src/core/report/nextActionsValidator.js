@@ -59,7 +59,7 @@ function validateRule(rule, path, errors) {
   }
 
   rule.actions.forEach((a, i) =>
-    validateAction(a, `${path}.actions[${i}]`, errors)
+    validateAction(a, `${path}.actions[${i}]`, errors),
   );
 }
 

@@ -8,7 +8,7 @@ let cachedConfig = null;
 function getDefaultConfigPath() {
   return path.resolve(
     __dirname,
-    "../../../../data/alternatives/inbox-next-actions.json"
+    "../../../../data/alternatives/inbox-next-actions.json",
   );
 }
 
@@ -27,7 +27,7 @@ function buildNextActions(recommendations, options = {}) {
     (recommendations || [])
       .flatMap((r) => splitProducts(r.hubspotProduct))
       .map((p) => p.toLowerCase())
-      .filter(Boolean)
+      .filter(Boolean),
   );
 
   const actions = [];

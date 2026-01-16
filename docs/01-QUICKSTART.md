@@ -83,6 +83,13 @@ curl -s -X POST "http://localhost:3001/analyze?pretty=1" \
   -d '{"url":"https://react.dev/"}' | head -n 40
 ```
 
+Compact (UI / frontend) analyze:
+
+```bash
+curl -s "http://localhost:3001/analyze?url=https://react.dev/&pretty=1" | head -n 60
+curl -s "http://localhost:3001/analyze?url=https://react.dev/&includeMeta=1&pretty=1" | head -n 80
+```
+
 ## 5) Run the CLI
 
 ```bash

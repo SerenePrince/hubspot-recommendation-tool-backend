@@ -31,7 +31,7 @@ router.get("/techdb/taxonomy", async (req, res) => {
             ? { id: String(gid), name: g.name }
             : { id: String(gid), name: null };
         }),
-      })
+      }),
     );
 
     // Optional pretty output

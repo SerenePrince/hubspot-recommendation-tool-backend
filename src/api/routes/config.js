@@ -8,7 +8,7 @@ const router = express.Router();
 function getDefaultMappingPath() {
   return path.resolve(
     __dirname,
-    "../../../../data/alternatives/hubspot-mapping.json"
+    "../../../../data/alternatives/hubspot-mapping.json",
   );
 }
 
@@ -34,7 +34,7 @@ function computeMeta(mapping) {
   const countItems = (obj) =>
     Object.values(obj).reduce(
       (sum, arr) => sum + (Array.isArray(arr) ? arr.length : 0),
-      0
+      0,
     );
 
   return {
