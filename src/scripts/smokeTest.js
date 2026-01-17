@@ -18,14 +18,14 @@ function readJson(p) {
 function mappingPath() {
   return path.resolve(
     process.cwd(),
-    "../data/alternatives/hubspot-mapping.json"
+    "./data/alternatives/hubspot-mapping.json",
   );
 }
 
 function nextActionsPath() {
   return path.resolve(
     process.cwd(),
-    "../data/alternatives/inbox-next-actions.json"
+    "./data/alternatives/inbox-next-actions.json",
   );
 }
 
@@ -38,7 +38,7 @@ async function main() {
   console.log("\n[1/4] Loading tech DB...");
   const db = await loadTechDb();
   console.log(
-    `Loaded tech DB: tech=${db.meta.techCount} categories=${db.meta.categoryCount} groups=${db.meta.groupCount} files=${db.meta.technologyFilesLoaded}`
+    `Loaded tech DB: tech=${db.meta.techCount} categories=${db.meta.categoryCount} groups=${db.meta.groupCount} files=${db.meta.technologyFilesLoaded}`,
   );
 
   // 2) Validate recommendation mapping
@@ -71,7 +71,7 @@ async function main() {
     console.log("\n[4/4] Running analyze:", url);
     const report = await analyzeUrl(url);
     console.log(
-      `Analyze OK: status=${report.fetch?.status} detections=${report.detections?.length} recommendations=${report.recommendations?.length} nextActions=${report.nextActions?.length}`
+      `Analyze OK: status=${report.fetch?.status} detections=${report.detections?.length} recommendations=${report.recommendations?.length} nextActions=${report.nextActions?.length}`,
     );
   } else {
     console.log("\n[4/4] Analyze skipped (no URL provided)");

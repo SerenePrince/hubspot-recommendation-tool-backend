@@ -1,0 +1,3 @@
+[submodule "data/vendor/webappanalyzer"]
+	path = data/vendor/webappanalyzer
+	url = https://github.com/enthec/webappanalyzer.git

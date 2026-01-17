@@ -7,6 +7,12 @@
 - Set `.env`
 - Use reverse proxy (nginx) if exposing publicly
 
+> Ensure Git submodules are initialized before starting the service:
+>
+> ```bash
+> git submodule update --init --recursive
+> ```
+
 ## Docker
 
 Build:
@@ -25,11 +31,21 @@ docker run --rm -p 3001:3001 \
   hubspot-tool-backend
 ```
 
+> The `data/vendor/webappanalyzer` directory is provided via a Git submodule and must be present on the host before starting the container.
+
 ## Recommended deployment pattern
 
 - Keep `data/` on host
-- Update vendor dataset on host via your clone script
-- Restart container after updates
+- Initialize and update the vendor dataset via Git submodule
+- Restart the container or service after dataset updates
+
+To update the dataset:
+
+```bash
+cd data/vendor/webappanalyzer
+git pull
+cd ../../..
+```
 
 ---
 

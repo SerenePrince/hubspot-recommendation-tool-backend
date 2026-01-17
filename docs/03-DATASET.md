@@ -2,11 +2,14 @@
 
 This project uses a vendor dataset that provides technology definitions and detection patterns.
 
+The dataset is maintained by a third party and is included in this repository as a **Git submodule**, pinned to a specific upstream commit for reproducibility.
+
 ## Expected folder structure
 
-`DATA_ROOT` points to the dataset src folder:
+`DATA_ROOT` points to the dataset `src` folder:
 
 ```
+
 DATA_ROOT/
 categories.json
 groups.json
@@ -16,6 +19,7 @@ a.json
 b.json
 ...
 z.json
+
 ```
 
 ## What’s in the dataset
@@ -62,7 +66,17 @@ The detector:
 
 ## Updating the dataset
 
-You already have a script that clones/updates the dataset periodically.
+The dataset is managed as a Git submodule.
+
+To update it to a newer upstream version:
+
+```bash
+cd data/vendor/webappanalyzer
+git pull
+cd ../../..
+git add data/vendor/webappanalyzer
+git commit -m "Update vendor dataset"
+```
 
 After updating:
 

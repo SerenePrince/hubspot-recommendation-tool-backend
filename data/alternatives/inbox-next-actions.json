@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "max": 5,
+  "rules": [
+    {
+      "when": { "productsAny": ["Marketing Hub"] },
+      "actions": [
+        {
+          "title": "Attribution & reporting workshop",
+          "priority": "high",
+          "relatedProducts": ["Marketing Hub"],
+          "why": "Align lifecycle stages, define conversion events, and build CRM-connected reporting to measure pipeline impact."
+        },
+        {
+          "title": "Tracking & tag governance audit",
+          "priority": "medium",
+          "relatedProducts": ["Marketing Hub"],
+          "why": "Reduce duplicate tags, standardize UTMs, and improve data quality for cleaner reporting."
+        }
+      ]
+    },
+    {
+      "when": { "productsAny": ["Content Hub"] },
+      "actions": [
+        {
+          "title": "Website & CMS migration assessment",
+          "priority": "high",
+          "relatedProducts": ["Content Hub"],
+          "why": "Evaluate migration scope, module needs, and opportunities to consolidate site + lead capture into HubSpot."
+        },
+        {
+          "title": "Conversion path optimization",
+          "priority": "medium",
+          "relatedProducts": ["Content Hub", "Marketing Hub"],
+          "why": "Review CTAs, forms, landing pages, and routing to improve conversion rate and lead quality."
+        }
+      ]
+    },
+    {
+      "when": { "productsAny": ["Service Hub"] },
+      "actions": [
+        {
+          "title": "Support workflow design session",
+          "priority": "high",
+          "relatedProducts": ["Service Hub"],
+          "why": "Design ticket pipelines, SLAs, routing, and inbox workflows tied to CRM context."
+        }
+      ]
+    },
+    {
+      "when": { "productsAny": ["Sales Hub", "CRM"] },
+      "actions": [
+        {
+          "title": "RevOps audit & lifecycle alignment",
+          "priority": "high",
+          "relatedProducts": ["CRM", "Sales Hub"],
+          "why": "Align properties, lifecycle stages, pipelines, and automation so teams operate from one system."
+        },
+        {
+          "title": "CRM migration / cleanup plan",
+          "priority": "medium",
+          "relatedProducts": ["CRM"],
+          "why": "Assess mappings, deduplication, and workflow impacts to reduce migration risk."
+        }
+      ]
+    }
+  ],
+  "always": [
+    {
+      "title": "Stack consolidation roadmap",
+      "priority": "low",
+      "relatedProducts": ["Marketing Hub", "Content Hub", "CRM", "Sales Hub", "Service Hub"],
+      "why": "Identify overlapping tools and define a phased plan to consolidate into HubSpot where it improves operations."
+    }
+  ]
+}

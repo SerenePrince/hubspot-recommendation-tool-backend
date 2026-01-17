@@ -56,35 +56,47 @@ Full documentation lives in `backend/docs/`.
 
 - Node.js **18+** (Node 20 recommended)
 - npm
+- Git (with submodule support)
+
+---
+
+## Third-Party Dataset (Git Submodule)
+
+This project depends on a third-party fingerprint dataset (Webappalyzer-style)
+which is included in this repository as a **Git submodule**.
+
+The dataset is **not copied into this codebase**.
+Instead, this repository pins a specific commit of the upstream project to ensure
+reproducible detection results across environments.
+
+You must initialize the submodule before running the backend.
 
 ---
 
 ## Dataset / Fingerprints
 
-This project expects a vendor fingerprint dataset at:
+This project relies on a third-party fingerprint dataset provided via a Git submodule
+located at:
 
 ```
-
 ../data/vendor/webappanalyzer/src
-
 ```
 
 That directory must contain:
 
 - `categories.json`
 - `groups.json`
-- `technologies/` (a.json … z.json, \_.json)
+- `technologies/` (a.json … z.json, `_.json`)
 
 Example structure:
 
 ```
-
 hubspot-technology-intelligence/
 ├─ backend/
 ├─ frontend/
 ├─ data/
 │  └─ vendor/
-│     └─ webappanalyzer/
+│     └─ webappanalyzer/      ← Git submodule
 │        └─ src/
 │           ├─ categories.json
 │           ├─ groups.json
@@ -92,14 +104,25 @@ hubspot-technology-intelligence/
 │              ├─ a.json
 │              ├─ ...
 │              └─ _.json
-
 ```
 
 ---
 
 ## Installation
 
-From `backend/`:
+Clone the repository **with submodules**:
+
+```bash
+git clone --recurse-submodules <REPO_URL>
+```
+
+If you already cloned the repository without submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
+Then, from `backend/`:
 
 ```bash
 npm install
@@ -114,6 +137,8 @@ Create `backend/.env` based on `.env.example`:
 ```env
 PORT=3001
 NODE_ENV=development
+
+# Path to the fingerprint dataset (Git submodule)
 DATA_ROOT=../data/vendor/webappanalyzer/src
 
 FETCH_TIMEOUT_MS=12000
@@ -156,6 +181,8 @@ Returns:
 - next actions
 - optional metadata
 
+---
+
 ### Full Intelligence Endpoint
 
 ```bash
@@ -164,7 +191,7 @@ curl -s -X POST "http://localhost:3001/analyze?pretty=1" \
   -d '{"url":"https://react.dev/"}'
 ```
 
-Returns the **complete professional report** including evidence and signals.
+Returns the **complete professional report**, including evidence and signals.
 
 #### POST Options
 
@@ -266,6 +293,12 @@ curl -s "http://localhost:3001/techdb/taxonomy?pretty=1"
 - After modifying configuration:
   - restart the backend
   - or run `npm run smoke` to validate
+
+- If the dataset folder is empty, ensure submodules are initialized:
+
+  ```bash
+  git submodule update --init --recursive
+  ```
 
 ---
 

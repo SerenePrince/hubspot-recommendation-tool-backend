@@ -7,6 +7,21 @@
 - Keep defaults safe
 - Prefer readable mapping keys (names), but support IDs for stability
 
+## Working with the vendor dataset
+
+The fingerprint dataset in `data/vendor/webappanalyzer` is a **third-party Git
+submodule**.
+
+- Do not edit files inside the submodule directly
+- If the dataset needs changes, update the submodule reference or use a forked upstream
+- Local modifications inside the submodule will not be committed unless explicitly intended
+
+If the dataset appears empty, initialize submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
 ## Adding a new detection signal type
 
 1. Add to `buildSignals()`

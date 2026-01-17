@@ -13,12 +13,18 @@ Check:
 - groups.json exists
 - technologies folder exists
 
+If the path exists but is empty, the Git submodule may not be initialized.
+
 Try:
 
 ```bash
 ls "$DATA_ROOT"
 ```
 
+If files are missing, run:
+
+```bash
+git submodule update --init --recursive
 ```
 
 ## “Mapping invalid”
@@ -27,7 +33,9 @@ Check:
 
 - JSON syntax errors
 - required fields: title, hubspotProduct, priority
-  Validate:
+
+Validate:
+
 - `GET /config/recommendations?pretty=1`
 - `npm run smoke`
 
@@ -44,11 +52,12 @@ This is common if:
 
 - site is heavily rendered client-side
 - patterns depend on scripts not visible on first response
-  Options:
+
+Options:
+
 - add DOM selector rules
 - add HTML/text rules
 - (optional future) fetch rendered HTML via headless browser — but that increases scope and must be carefully considered for “not recon” stance.
-```
 
 ---
 

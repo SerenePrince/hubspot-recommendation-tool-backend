@@ -8,7 +8,7 @@ const router = express.Router();
 function getDefaultMappingPath() {
   return path.resolve(
     __dirname,
-    "../../../../data/alternatives/hubspot-mapping.json",
+    "../../../data/alternatives/hubspot-mapping.json",
   );
 }
 

@@ -10,7 +10,7 @@ const router = express.Router();
 function getDefaultConfigPath() {
   return path.resolve(
     __dirname,
-    "../../../../data/alternatives/inbox-next-actions.json",
+    "../../../data/alternatives/inbox-next-actions.json",
   );
 }
 

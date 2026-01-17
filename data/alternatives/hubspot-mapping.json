@@ -1,0 +1,323 @@
+{
+  "version": 1,
+  "notes": [
+    "Inbox-focused mapping: HubSpot Solutions (RevOps, CRM migrations, Service Hub, Sales Enablement, Custom Attribution) + Inbound/Advertising/Deliverability.",
+    "Uses byCategoryId/byGroupId for stable keys we already know from this dataset; uses names for everything else."
+  ],
+
+  "byTechnology": {
+    "WordPress": [
+      {
+        "title": "Migrate from WordPress to HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "reason": "Move the website onto HubSpot for CRM-connected content, reporting, and easier marketing iteration.",
+        "inboxOffer": "Website migration + custom modules + landing pages"
+      }
+    ],
+    "WordPress.com": [
+      {
+        "title": "Evaluate moving the site from WordPress.com to HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "reason": "HubSpot can unify site + marketing + CRM data in one system.",
+        "inboxOffer": "Migration planning + implementation"
+      }
+    ],
+
+    "Google Analytics": [
+      {
+        "title": "Unify reporting & attribution in HubSpot (and reduce tool sprawl)",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "reason": "If your goal is closed-loop reporting tied to CRM lifecycle stages, HubSpot reporting can simplify your stack.",
+        "inboxOffer": "Custom attribution systems + reporting dashboards"
+      }
+    ],
+    "Google Tag Manager": [
+      {
+        "title": "Audit tag governance and consolidate tracking where possible",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "low",
+        "reason": "Reduce duplicate tags and improve data quality by standardizing your tracking approach.",
+        "inboxOffer": "Tracking plan + GTM cleanup + HubSpot tracking alignment"
+      }
+    ],
+    "Google Ads": [
+      {
+        "title": "Connect ads to CRM outcomes with HubSpot Ads + attribution",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "reason": "Tie spend to lifecycle stages and revenue reporting inside HubSpot.",
+        "inboxOffer": "Ad reporting + attribution implementation"
+      }
+    ],
+    "Google Ads Conversion Tracking": [
+      {
+        "title": "Improve conversion tracking and attribution inside HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "reason": "Better aligns conversion events with CRM outcomes and reporting.",
+        "inboxOffer": "Custom attribution systems"
+      }
+    ],
+
+    "Mailchimp": [
+      {
+        "title": "Replace Mailchimp with HubSpot Email + Automation",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "reason": "Consolidate email marketing, segmentation, and automation with CRM-native data.",
+        "inboxOffer": "Email migration + automation rebuild + deliverability support"
+      }
+    ],
+    "Klaviyo": [
+      {
+        "title": "Evaluate consolidating lifecycle email into HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "reason": "If CRM-driven personalization and unified reporting is the goal, HubSpot can reduce fragmentation.",
+        "inboxOffer": "Automation strategy + segmentation + reporting"
+      }
+    ],
+
+    "Intercom": [
+      {
+        "title": "Replace Intercom with HubSpot Service Hub (Conversations + Tickets)",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "reason": "Unify chat, inbox, tickets, and customer context directly in HubSpot.",
+        "inboxOffer": "Service Hub setup + workflow automation + migration"
+      }
+    ],
+    "Zendesk": [
+      {
+        "title": "Migrate ticketing to HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "reason": "Centralize support data alongside CRM and automate support workflows.",
+        "inboxOffer": "Ticketing migration + workflow rebuild"
+      }
+    ],
+
+    "Salesforce": [
+      {
+        "title": "Assess CRM migration to HubSpot",
+        "hubspotProduct": "CRM / Sales Hub",
+        "priority": "high",
+        "reason": "If you want simpler CRM operations + marketing/sales alignment, HubSpot can be a strong consolidation move.",
+        "inboxOffer": "HubSpot CRM migrations + workflow rebuild"
+      }
+    ],
+    "HubSpot": [
+      {
+        "title": "Optimize your HubSpot portal with RevOps + automation",
+        "hubspotProduct": "RevOps / Marketing Hub / Sales Hub / Service Hub",
+        "priority": "high",
+        "reason": "If HubSpot is already present, there is usually significant upside from portal cleanup, lifecycle alignment, and automation strategy.",
+        "inboxOffer": "Revenue Operations + custom attribution systems + workflow architecture"
+      }
+    ]
+  },
+
+  "byCategoryId": {
+    "1": [
+      {
+        "title": "Consider HubSpot Content Hub for your CMS",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "reason": "CMS detected — HubSpot Content Hub can unify website + CRM + marketing reporting.",
+        "inboxOffer": "Website development + migration + custom modules"
+      }
+    ],
+    "11": [
+      {
+        "title": "Consolidate blog + lead capture into HubSpot",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "reason": "If blogging is a growth channel, HubSpot can unify content, CTAs, forms, and reporting.",
+        "inboxOffer": "Content strategy + SEO + conversion optimization"
+      }
+    ],
+    "10": [
+      {
+        "title": "Implement HubSpot-first analytics + attribution",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "reason": "Analytics category detected — Inbox builds custom attribution systems and reporting inside HubSpot.",
+        "inboxOffer": "HubSpot custom attribution systems"
+      }
+    ],
+    "42": [
+      {
+        "title": "Audit tag management and tracking architecture",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "low",
+        "reason": "Tag manager detected — reduce duplication and improve governance.",
+        "inboxOffer": "Tracking plan + tag governance + measurement framework"
+      }
+    ],
+    "62": [
+      {
+        "title": "Align hosting/platform decisions with HubSpot website strategy",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "reason": "PaaS detected — if the site is marketing-led, HubSpot Content Hub may simplify deployment and reporting.",
+        "inboxOffer": "Website platform assessment + migration roadmap"
+      }
+    ]
+  },
+
+  "byCategory": {
+    "CRM": [
+      {
+        "title": "Centralize customer data and lifecycle stages in HubSpot CRM",
+        "hubspotProduct": "CRM",
+        "priority": "high",
+        "reason": "CRM tooling detected — consolidate core objects, properties, and lifecycle logic in HubSpot.",
+        "inboxOffer": "CRM design + data model + portal setup"
+      }
+    ],
+    "Customer support": [
+      {
+        "title": "Unify customer support in HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "reason": "Support tooling detected — consolidate tickets, SLAs, and reporting inside HubSpot.",
+        "inboxOffer": "Service Hub setup + migration + workflows"
+      }
+    ],
+    "Live chat": [
+      {
+        "title": "Standardize chat + lead routing using HubSpot Conversations",
+        "hubspotProduct": "Service Hub",
+        "priority": "medium",
+        "reason": "Chat tooling detected — unify inbox, routing, and contact context in HubSpot.",
+        "inboxOffer": "Chat routing + SLAs + playbooks"
+      }
+    ],
+    "Forms": [
+      {
+        "title": "Move forms and lead capture into HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "reason": "Forms detected — HubSpot forms can simplify routing, segmentation, and reporting.",
+        "inboxOffer": "Form strategy + conversion optimization + routing workflows"
+      }
+    ],
+    "A/B Testing": [
+      {
+        "title": "Use HubSpot to run conversion-focused experiments",
+        "hubspotProduct": "Marketing Hub / Content Hub",
+        "priority": "medium",
+        "reason": "Testing tools detected — unify landing pages, CTAs, and reporting within HubSpot where possible.",
+        "inboxOffer": "CRO experimentation + reporting"
+      }
+    ],
+    "Advertising": [
+      {
+        "title": "Connect ads to CRM outcomes in HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "reason": "Advertising category detected — HubSpot can connect spend to pipeline outcomes.",
+        "inboxOffer": "Paid media + attribution + reporting"
+      }
+    ],
+    "Email marketing": [
+      {
+        "title": "Consolidate lifecycle email into HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "reason": "Email marketing detected — HubSpot simplifies segmentation, automation, and reporting tied to CRM.",
+        "inboxOffer": "Email automation + deliverability support"
+      }
+    ],
+    "Marketing automation": [
+      {
+        "title": "Rebuild automation workflows inside HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "reason": "Automation tooling detected — HubSpot workflows can centralize lifecycle automation.",
+        "inboxOffer": "Workflow architecture + lifecycle alignment"
+      }
+    ],
+    "Sales enablement": [
+      {
+        "title": "Implement HubSpot Sales Hub enablement",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "reason": "Sales enablement tooling detected — HubSpot sequences, playbooks, and pipelines improve adoption and consistency.",
+        "inboxOffer": "Sales enablement + pipeline design + automation"
+      }
+    ]
+  },
+
+  "byGroupId": {
+    "3": [
+      {
+        "title": "Unify content + lead capture with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "reason": "Content group detected — HubSpot unifies pages, CTAs, forms, and reporting.",
+        "inboxOffer": "Website development + content strategy"
+      }
+    ],
+    "8": [
+      {
+        "title": "Build HubSpot-first reporting and attribution",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "reason": "Analytics group detected — Inbox specializes in HubSpot attribution and reporting.",
+        "inboxOffer": "Custom attribution systems"
+      }
+    ],
+    "7": [
+      {
+        "title": "Align platform decisions with HubSpot website + CRM strategy",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "reason": "Servers group detected — if marketing-led, consolidating onto HubSpot can reduce maintenance overhead.",
+        "inboxOffer": "Platform assessment + migration roadmap"
+      }
+    ],
+    "6": [
+      {
+        "title": "Review miscellaneous tools for consolidation opportunities",
+        "hubspotProduct": "Marketing Hub / Content Hub",
+        "priority": "low",
+        "reason": "Misc tooling often indicates stack sprawl; HubSpot can consolidate common needs.",
+        "inboxOffer": "Stack rationalization + implementation"
+      }
+    ]
+  },
+
+  "byGroup": {
+    "Marketing": [
+      {
+        "title": "Build an integrated HubSpot marketing system",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "reason": "Marketing tooling detected — HubSpot can consolidate tracking, automation, and reporting.",
+        "inboxOffer": "Inbound marketing + advertising + automation"
+      }
+    ],
+    "Sales": [
+      {
+        "title": "Enable the sales team with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "reason": "Sales tooling detected — standardize pipelines, playbooks, sequences, and reporting.",
+        "inboxOffer": "Sales enablement + RevOps"
+      }
+    ],
+    "Communication": [
+      {
+        "title": "Unify conversations and routing in HubSpot",
+        "hubspotProduct": "Service Hub",
+        "priority": "medium",
+        "reason": "Communication tooling detected — HubSpot can centralize inbox/chat/tickets tied to CRM.",
+        "inboxOffer": "Service Hub implementation + routing + SLAs"
+      }
+    ]
+  }
+}

@@ -6,17 +6,20 @@ This doc gets you running in the shortest time.
 
 - Node.js 18+ (Node 20 recommended)
 - npm
-- A local clone of the vendor fingerprint dataset (WebAppAnalyzer)
+- Git (with submodule support)
+
+> This project depends on a third-party fingerprint dataset that is included as a **Git submodule**. The submodule must be initialized before running the backend.
 
 ## Repository layout (top level)
 
 ```
+
 hubspot-recommendation-tool/
 backend/
 frontend/   (future)
 data/
 vendor/
-webappanalyzer/
+webappanalyzer/   ← Git submodule
 src/
 categories.json
 groups.json
@@ -24,6 +27,7 @@ technologies/
 alternatives/
 hubspot-mapping.json
 inbox-next-actions.json
+
 ```
 
 ## 1) Install backend deps
@@ -36,15 +40,21 @@ npm install
 
 ## 2) Ensure vendor dataset exists
 
-Your vendor clone should land at:
+The fingerprint dataset is provided via a Git submodule at:
 
 `data/vendor/webappanalyzer/src`
+
+If you cloned the repository without submodules, initialize them now:
+
+```bash
+git submodule update --init --recursive
+```
 
 Sanity check:
 
 ```bash
 ls ../data/vendor/webappanalyzer/src
-# should show: categories.json groups.json images technologies
+# should show: categories.json groups.json technologies
 ```
 
 ## 3) Configure environment
