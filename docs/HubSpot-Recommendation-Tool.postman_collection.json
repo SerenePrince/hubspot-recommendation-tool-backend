@@ -1,0 +1,184 @@
+{
+  "info": {
+    "name": "HubSpot Recommendation Tool (Backend)",
+    "_postman_id": "6c1c12c2-3a0a-4e73-9d44-51c93c19b9a1",
+    "description": "Surface-level website technology detection + HubSpot-focused recommendations.\n\n## Purpose\nThis API analyzes a **single public URL** and returns:\n- Technologies detected (surface-level)\n- Categories and groups\n- HubSpot recommendations (config-driven)\n- \n## Guardrails\nThis is **not** a recon/scanning tool:\n- No crawling\n- No enumeration\n- No brute forcing\n- No login bypass\n- No private network access (SSRF protections)\n\n## Environment variables used\n- `{{baseUrl}}` (example: http://localhost:3001)\n- `{{exampleUrl}}` (example: https://react.dev/)\n\n## Workflow\n1. Run **Health**\n2. Run **Analyze** (default)\n3. Try Analyze options (pretty / includeMeta)\n4. Validate config locally (`npm run validate-config`)\n5. Use the CLI for deeper inspection (`npm run cli -- ... --pretty-json`)\n",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "description": "Use this folder to confirm the backend is running.\n\n### When to use\n- Before demos\n- After deployment\n- After changing `.env`\n- After updating the vendor dataset\n\n### Expected behavior\n- Should return HTTP 200\n- Response includes `{ ok: true }`",
+      "item": [
+        {
+          "name": "GET /health (default)",
+          "description": "Health check endpoint.\n\n### Use case\n- Confirm API is reachable.\n\n### Expected response\n- HTTP 200\n- JSON:\n```json\n{ \"ok\": true }\n```",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('service field exists', function () { pm.expect(body).to.have.property('service'); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Analyze",
+      "description": "Core endpoint for running a **single-page, surface-level** tech analysis.\n\n## GET /analyze\nThis endpoint:\n1. Fetches a single URL (HTML + headers + cookies + referenced JS/CSS, bounded)\n2. Extracts public signals\n3. Detects technologies using fingerprint patterns\n4. Generates recommendations & \n## Query parameters\n### pretty\n- `pretty=1` \u2192 pretty-printed JSON\n\n### includeMeta\n- `includeMeta=1` \u2192 includes lightweight metadata (cache + timings + fetch summary)\n\n## Notes\n- Only one URL is fetched (no crawling).\n- SSRF protections block localhost/private IPs.\n- The analysis result may be cached by URL for a short TTL.",
+      "item": [
+        {
+          "name": "GET /analyze (compact)",
+          "description": "Lightweight, frontend-friendly analyze endpoint (GET).",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analyze?url={{exampleUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "{{exampleUrl}}"
+                }
+              ]
+            },
+            "description": "Core endpoint for running a **single-page, surface-level** tech analysis.\n\n## GET /analyze\nThis endpoint:\n1. Fetches a single URL (HTML + headers + cookies + referenced JS/CSS, bounded)\n2. Extracts public signals\n3. Detects technologies using fingerprint patterns\n4. Generates recommendations & \n## Query parameters\n### pretty\n- `pretty=1` \u2192 pretty-printed JSON\n\n### includeMeta\n- `includeMeta=1` \u2192 includes lightweight metadata (cache + timings + fetch summary)\n\n## Notes\n- Only one URL is fetched (no crawling).\n- SSRF protections block localhost/private IPs.\n- The analysis result may be cached by URL for a short TTL."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('technologies is an array', function () { pm.expect(body.technologies).to.be.an('array'); });",
+                  "pm.test('hubspot object exists', function () { pm.expect(body).to.have.property('hubspot'); });",
+                  "pm.test('hubspot.recommendations is an array', function () { pm.expect(body.hubspot.recommendations).to.be.an('array'); });",
+                  "pm.test('hubspot. is an array', function () { pm.expect(body.hubspot.).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /analyze?pretty=1 (compact)",
+          "description": "Lightweight, frontend-friendly analyze endpoint (GET).",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analyze?url={{exampleUrl}}&pretty=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "{{exampleUrl}}"
+                },
+                {
+                  "key": "pretty",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Core endpoint for running a **single-page, surface-level** tech analysis.\n\n## GET /analyze\nThis endpoint:\n1. Fetches a single URL (HTML + headers + cookies + referenced JS/CSS, bounded)\n2. Extracts public signals\n3. Detects technologies using fingerprint patterns\n4. Generates recommendations & \n## Query parameters\n### pretty\n- `pretty=1` \u2192 pretty-printed JSON\n\n### includeMeta\n- `includeMeta=1` \u2192 includes lightweight metadata (cache + timings + fetch summary)\n\n## Notes\n- Only one URL is fetched (no crawling).\n- SSRF protections block localhost/private IPs.\n- The analysis result may be cached by URL for a short TTL."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('technologies is an array', function () { pm.expect(body.technologies).to.be.an('array'); });",
+                  "pm.test('hubspot object exists', function () { pm.expect(body).to.have.property('hubspot'); });",
+                  "pm.test('hubspot.recommendations is an array', function () { pm.expect(body.hubspot.recommendations).to.be.an('array'); });",
+                  "pm.test('hubspot. is an array', function () { pm.expect(body.hubspot.).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /analyze?includeMeta=1 (compact + meta)",
+          "description": "Lightweight, frontend-friendly analyze endpoint (GET).",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analyze?url={{exampleUrl}}&includeMeta=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "{{exampleUrl}}"
+                },
+                {
+                  "key": "includeMeta",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Core endpoint for running a **single-page, surface-level** tech analysis.\n\n## GET /analyze\nThis endpoint:\n1. Fetches a single URL (HTML + headers + cookies + referenced JS/CSS, bounded)\n2. Extracts public signals\n3. Detects technologies using fingerprint patterns\n4. Generates recommendations & \n## Query parameters\n### pretty\n- `pretty=1` \u2192 pretty-printed JSON\n\n### includeMeta\n- `includeMeta=1` \u2192 includes lightweight metadata (cache + timings + fetch summary)\n\n## Notes\n- Only one URL is fetched (no crawling).\n- SSRF protections block localhost/private IPs.\n- The analysis result may be cached by URL for a short TTL."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is JSON', function () { pm.response.to.be.json; });",
+                  "const body = pm.response.json();",
+                  "pm.test('ok is true', function () { pm.expect(body.ok).to.eql(true); });",
+                  "pm.test('technologies is an array', function () { pm.expect(body.technologies).to.be.an('array'); });",
+                  "pm.test('hubspot object exists', function () { pm.expect(body).to.have.property('hubspot'); });",
+                  "pm.test('hubspot.recommendations is an array', function () { pm.expect(body.hubspot.recommendations).to.be.an('array'); });",
+                  "pm.test('hubspot. is an array', function () { pm.expect(body.hubspot.).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

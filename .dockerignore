@@ -1,0 +1,58 @@
+# ============================================
+# .dockerignore
+# ============================================
+
+# Git
+.git
+.gitignore
+
+# Node artifacts (installed in container)
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# Editor / OS junk
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Tests & coverage
+coverage
+.nyc_output
+__tests__
+test
+tests
+*.test.js
+*.spec.js
+*.test.ts
+*.spec.ts
+
+# Build outputs
+dist
+build
+out
+.cache
+tmp
+temp
+
+# Logs
+logs
+*.log
+
+# Docs (optional)
+docs
+CHANGELOG.md
+CONTRIBUTING.md
+
+# Large unused assets (keep this — it’s good)
+data/vendor/webappanalyzer/src/images
+**/images

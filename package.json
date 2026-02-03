@@ -1,0 +1,26 @@
+{
+  "name": "hubspot-recommendation-tool-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/api/server.js",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev:api": "node src/api/server.js",
+    "cli": "node src/cli/index.js",
+    "cli:tax": "node src/cli/taxonomy.js",
+    "smoke": "node src/scripts/smokeTest.js",
+    "validate-config": "node src/scripts/validateConfig.js",
+    "prestart": "npm run validate-config",
+    "start": "node src/api/server.js",
+    "dev": "node src/api/server.js"
+  },
+  "keywords": [],
+  "author": "Team Debug",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  }
+}
