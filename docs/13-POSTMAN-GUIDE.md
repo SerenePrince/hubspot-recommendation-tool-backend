@@ -1,137 +1,91 @@
 # Postman Guide
 
-This project ships with a minimal Postman collection for the backend API.
+This project includes a Postman collection and environment to test the backend API quickly.
+
+Files:
+
+- `docs/HubSpot-Recommendation-Tool.postman_collection.json`
+- `docs/HubSpot-Recommendation-Tool.postman_environment.json`
+
+The collection is aligned with the current API response schema (`apiVersion: "2.0"`).
 
 ---
 
-## 1. Importing the Collection
+## Import
 
-You should have two files:
-
-- `HubSpot-Recommendation-Tool.postman_collection.json`
-- `HubSpot-Recommendation-Tool.postman_environment.json`
-
-In Postman: **Import** → select both files → **Import**.
+1. Open Postman
+2. Import the **collection** JSON
+3. Import the **environment** JSON
+4. Select the environment: **HubSpot Recommendation Tool (Local)** (or whatever name you choose)
 
 ---
 
-## 2. Select the Environment
+## Environment Variables
 
-In the top-right environment dropdown, choose:
-
-**HubSpot Recommendation Tool (Local)**
-
-Variables:
-
-| Variable     | Value                   |
-| ------------ | ----------------------- |
-| `baseUrl`    | `http://localhost:3001` |
-| `exampleUrl` | `https://react.dev/`    |
+| Variable | Example | Description |
+| --- | --- | --- |
+| `baseUrl` | `http://localhost:3001` | API base URL |
+| `exampleUrl` | `https://react.dev/` | Example site to analyze |
+| `apiVersion` | `2.0` | Expected API schema version |
 
 ---
 
-## 3. Collection Structure
-
-This backend intentionally exposes a minimal API surface:
-
-- **Health**
-  - `GET /health`
-- **Analyze**
-  - `GET /analyze?url=...`
-  - variations with `pretty=1` and/or `includeMeta=1`
-
-Configuration and taxonomy are **not** exposed as HTTP endpoints. Use the CLI and local JSON files instead:
-
-- `npm run cli:tax`
-- `data/alternatives/*.json`
-- `npm run validate-config`
-
----
-
-## 4. Core Request: Analyze
-
-### Default (compact)
-
-```
-GET {{baseUrl}}/analyze?url={{exampleUrl}}
-```
-
-### Pretty JSON
-
-```
-GET {{baseUrl}}/analyze?url={{exampleUrl}}&pretty=1
-```
-
-### Include metadata (cache + timings + fetch summary)
-
-```
-GET {{baseUrl}}/analyze?url={{exampleUrl}}&includeMeta=1
-GET {{baseUrl}}/analyze?url={{exampleUrl}}&includeMeta=1&pretty=1
-```
-
----
-
-## 5. Error Handling Example
-
-Missing `url`:
-
-```
-GET {{baseUrl}}/analyze
-```
-
-Returns:
-
-```json
-{
-  "ok": false,
-  "error": "Missing or invalid 'url' in query string",
-  "example": "/analyze?url=https://react.dev/"
-}
-```
-
----
-
-## 6. Typical Workflow
-
-1. Start the backend server
-2. Select the Postman environment
-3. Run **Health**
-4. Run **Analyze (compact)**
-5. Run **Analyze (includeMeta=1)** when you need timing/cache hints
-
----
-
-## 7. When Something Looks Wrong
-
-If a detection or recommendation looks incorrect:
-
-1. Validate configuration:
+## Run the API locally
 
 ```bash
-npm run validate-config
-```
-
-2. Run a smoke test:
-
-```bash
-npm run smoke
-```
-
-3. Use the CLI for deeper inspection:
-
-```bash
-npm run cli -- https://react.dev/ --pretty-json
-npm run cli -- https://react.dev/ --json
+npm install
+npm run dev:api
 ```
 
 ---
 
-## 8. Best Practices
+## Requests
 
-- Use the API output for the frontend; use the CLI for debugging and deeper inspection.
-- Keep the API minimal and client-focused.
-- Don’t add extra “diagnostic” endpoints unless the client explicitly needs them.
+### Health
+
+`GET /health`
+
+Confirms the API is running.
+
+### Analyze (compact)
+
+`GET /analyze?url={{exampleUrl}}`
+
+Returns the clean analysis report for frontend use.
+
+### Analyze (pretty)
+
+`GET /analyze?url={{exampleUrl}}&pretty=1`
+
+Pretty-prints JSON for easy reading.
+
+### Analyze (includeMeta)
+
+`GET /analyze?url={{exampleUrl}}&includeMeta=1`
+
+Includes `meta.fetch` and `meta.timings` in the response.
 
 ---
 
-### [← 12 Client Report Guide](12-CLIENT-REPORT-GUIDE.md) | **13 Client Report Guide** | [14 Docker Guide →](14-DOCKER-GUIDE.md)
+## Test Scripts
+
+Each `GET /analyze...` request includes Postman tests that validate:
+
+- `ok: true`
+- `apiVersion: "2.0"`
+- Required top-level fields: `url`, `finalUrl`, `technologies`, `byGroup`, `recommendations`, `summary`
+- Technology payload includes `hubspot.primaryProduct` and ordered `hubspot.products`
+- Recommendations include `triggeredBy` and `triggeredBySummary`
+
+---
+
+## CLI Reference (optional)
+
+For deeper inspection:
+
+```bash
+npm run cli -- {{exampleUrl}} --format human --wrap
+npm run cli:pretty -- {{exampleUrl}}
+```
+
+---
