@@ -1,14 +1,23 @@
 {
-  "version": 3,
-  "notes": "Client-editable mapping of detected technologies/areas to HubSpot recommendations. Edit byTechnology and byCategory only (no numeric IDs). Product lineup aligns to HubSpot hubs: Marketing, Sales, Service, Content, Data, Commerce. Priorities: high/medium/low.",
   "byTechnology": {
     "WordPress": [
       {
         "title": "Migrate from WordPress to HubSpot Content Hub",
         "hubspotProduct": "Content Hub",
         "priority": "high",
-        "reason": "Move your website onto HubSpot for CRM-connected content, SEO tooling, lead capture, and unified reporting across the customer journey.",
-        "inboxOffer": "Website migration + custom modules + landing pages + SEO optimization"
+        "description": "Move your website onto HubSpot for CRM-connected content, SEO tooling, lead capture, and unified reporting across the customer journey."
+      },
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
       }
     ],
     "WordPress.com": [
@@ -16,8 +25,19 @@
         "title": "Evaluate moving from WordPress.com to HubSpot Content Hub",
         "hubspotProduct": "Content Hub",
         "priority": "high",
-        "reason": "HubSpot unifies website management with marketing automation and CRM data for personalization and lifecycle reporting.",
-        "inboxOffer": "Migration planning + implementation + training"
+        "description": "HubSpot unifies website management with marketing automation and CRM data for personalization and lifecycle reporting."
+      },
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress.com",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
       }
     ],
     "Webflow": [
@@ -25,17 +45,39 @@
         "title": "Consolidate Webflow + marketing tooling into HubSpot Content Hub",
         "hubspotProduct": "Content Hub",
         "priority": "high",
-        "reason": "Use HubSpot as a CMS that connects website experiences directly to CRM data, automation, and attribution.",
-        "inboxOffer": "Replatform assessment + design system + migration + HubSpot CMS development"
+        "description": "Use HubSpot as a CMS that connects website experiences directly to CRM data, automation, and attribution."
+      },
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Webflow",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
       }
     ],
     "Wix": [
       {
+        "title": "Power growth with HubSpot Marketing Hub alongside Wix",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
         "title": "Upgrade from Wix to HubSpot Content Hub",
         "hubspotProduct": "Content Hub",
         "priority": "high",
-        "reason": "Replace Wix with a CRM-connected website platform that enables personalization, lead capture, and unified reporting.",
-        "inboxOffer": "Website migration + CRM integration + conversion optimization"
+        "description": "Replace Wix with a CRM-connected website platform that enables personalization, lead capture, and unified reporting."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
       }
     ],
     "Squarespace": [
@@ -43,36 +85,101 @@
         "title": "Move from Squarespace to HubSpot Content Hub",
         "hubspotProduct": "Content Hub",
         "priority": "high",
-        "reason": "Integrate your website with marketing automation and sales tools for end-to-end customer journey tracking.",
-        "inboxOffer": "Platform migration + lead capture setup + analytics integration"
+        "description": "Integrate your website with marketing automation and sales tools for end-to-end customer journey tracking."
+      },
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Squarespace",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
       }
     ],
     "Drupal": [
       {
+        "title": "Power growth with HubSpot Marketing Hub alongside Drupal",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
         "title": "Consider migrating from Drupal to HubSpot Content Hub",
         "hubspotProduct": "Content Hub",
         "priority": "medium",
-        "reason": "Reduce technical complexity while gaining CRM-native content management and built-in marketing capabilities.",
-        "inboxOffer": "Migration assessment + implementation roadmap"
+        "description": "Reduce technical complexity while gaining CRM-native content management and built-in marketing capabilities."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
       }
     ],
     "Joomla": [
       {
+        "title": "Power growth with HubSpot Marketing Hub alongside Joomla",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      },
+      {
         "title": "Modernize your CMS with HubSpot Content Hub",
         "hubspotProduct": "Content Hub",
         "priority": "medium",
-        "reason": "Replace aging CMS infrastructure with a platform that connects content to customer data and reporting.",
-        "inboxOffer": "CMS migration + modern website development"
+        "description": "Replace aging CMS infrastructure with a platform that connects content to customer data and reporting."
       }
     ],
-
+    "Ghost": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Ghost",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Consolidate Ghost blogging into HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Unify blog content with CRM data for personalized experiences, lead capture, and attribution."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Medium": [
+      {
+        "title": "Bring content ownership in-house with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Publish content on your own domain, connected to CRM, lead capture, and marketing automation."
+      }
+    ],
     "Google Analytics": [
+      {
+        "title": "Operationalize events with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Sync events into CRM properties."
+      },
       {
         "title": "Unify reporting and attribution in HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "medium",
-        "reason": "Connect web behavior and lifecycle stages for closed-loop reporting that tracks leads through to revenue.",
-        "inboxOffer": "Attribution design + reporting dashboards + lifecycle tracking"
+        "description": "Connect web behavior and lifecycle stages for closed-loop reporting that tracks leads through to revenue."
       }
     ],
     "Google Tag Manager": [
@@ -80,8 +187,43 @@
         "title": "Audit tracking governance and align measurement to HubSpot lifecycle",
         "hubspotProduct": "Marketing Hub",
         "priority": "low",
-        "reason": "Reduce tag sprawl, standardize events, and improve data quality for cleaner reporting and attribution.",
-        "inboxOffer": "Tracking plan + GTM cleanup + HubSpot tracking alignment"
+        "description": "Reduce tag sprawl, standardize events, and improve data quality for cleaner reporting and attribution."
+      }
+    ],
+    "Adobe Analytics": [
+      {
+        "title": "Simplify analytics with HubSpot's unified reporting",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Replace complex analytics tooling with CRM-native reporting that connects marketing to revenue."
+      }
+    ],
+    "Mixpanel": [
+      {
+        "title": "Consolidate product analytics into HubSpot lifecycle reporting",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Connect product engagement to CRM records for unified customer intelligence and retention strategies."
+      },
+      {
+        "title": "Operationalize events with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Sync events into CRM properties."
+      }
+    ],
+    "Amplitude": [
+      {
+        "title": "Connect product behavior to CRM with HubSpot Data Hub",
+        "hubspotProduct": "Data Hub",
+        "priority": "medium",
+        "description": "Unify product analytics with customer data for improved segmentation and lifecycle marketing."
+      },
+      {
+        "title": "Operationalize events with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Sync events into CRM properties."
       }
     ],
     "Google Ads": [
@@ -89,8 +231,7 @@
         "title": "Connect Google Ads to CRM outcomes with HubSpot",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Track ad spend to pipeline and revenue in HubSpot for true ROI measurement and optimization.",
-        "inboxOffer": "Ads integration + attribution reporting + campaign optimization"
+        "description": "Track ad spend to pipeline and revenue in HubSpot for true ROI measurement and optimization."
       }
     ],
     "Meta Pixel": [
@@ -98,8 +239,7 @@
         "title": "Connect paid social performance to pipeline in HubSpot",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Tie social advertising audiences and conversions to CRM data for better targeting and revenue attribution.",
-        "inboxOffer": "Social ads integration + attribution + audience syncing"
+        "description": "Tie social advertising audiences and conversions to CRM data for better targeting and revenue attribution."
       }
     ],
     "LinkedIn Insight Tag": [
@@ -107,18 +247,29 @@
         "title": "Connect LinkedIn ads to HubSpot for B2B attribution",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Track LinkedIn campaign impact through lifecycle stages and closed-won revenue.",
-        "inboxOffer": "LinkedIn ads setup + lead gen forms integration + attribution"
+        "description": "Track LinkedIn campaign impact through lifecycle stages and closed-won revenue."
       }
     ],
-
+    "TikTok Pixel": [
+      {
+        "title": "Track TikTok campaigns to revenue in HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Connect emerging channel performance to CRM outcomes for full-funnel attribution."
+      }
+    ],
     "Mailchimp": [
       {
         "title": "Replace Mailchimp with HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Consolidate email marketing with CRM data for personalized automation, segmentation, and unified reporting.",
-        "inboxOffer": "Email migration + automation rebuild + deliverability optimization"
+        "description": "Consolidate email marketing with CRM data for personalized automation, segmentation, and unified reporting."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
       }
     ],
     "Klaviyo": [
@@ -126,8 +277,13 @@
         "title": "Consolidate lifecycle email into HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Unify ecommerce messaging with CRM segmentation and revenue attribution to improve retention and LTV.",
-        "inboxOffer": "Klaviyo migration + ecommerce automation + segmentation strategy"
+        "description": "Unify ecommerce messaging with CRM segmentation and revenue attribution to improve retention and LTV."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
       }
     ],
     "Constant Contact": [
@@ -135,8 +291,13 @@
         "title": "Upgrade from Constant Contact to HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Move beyond basic email to automation and reporting connected to CRM lifecycle stages.",
-        "inboxOffer": "Email platform migration + workflows + lead scoring"
+        "description": "Move beyond basic email to automation and reporting connected to CRM lifecycle stages."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
       }
     ],
     "ActiveCampaign": [
@@ -144,8 +305,7 @@
         "title": "Consolidate ActiveCampaign into HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "medium",
-        "reason": "Unify automation, CRM-connected segmentation, and sales handoffs in one platform.",
-        "inboxOffer": "Migration assessment + workflow rebuild + lifecycle design"
+        "description": "Unify automation, CRM-connected segmentation, and sales handoffs in one platform."
       }
     ],
     "Marketo": [
@@ -153,8 +313,7 @@
         "title": "Evaluate migrating Marketo to HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Simplify marketing operations while improving alignment across marketing, sales, and service teams.",
-        "inboxOffer": "Migration planning + nurture rebuild + scoring + reporting"
+        "description": "Simplify marketing operations while improving alignment across marketing, sales, and service teams."
       }
     ],
     "Pardot": [
@@ -162,352 +321,3003 @@
         "title": "Evaluate consolidating Pardot into HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Unify automation and attribution across the full funnel with a single customer platform.",
-        "inboxOffer": "Migration assessment + automation rebuild + attribution"
+        "description": "Unify automation and attribution across the full funnel with a single customer platform."
       }
     ],
     "SendGrid": [
       {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
+      },
+      {
         "title": "Improve deliverability and lifecycle automation with HubSpot",
         "hubspotProduct": "Marketing Hub",
         "priority": "medium",
-        "reason": "Use HubSpot workflows and CRM context to drive consistent lifecycle communications and reporting.",
-        "inboxOffer": "Deliverability audit + lifecycle messaging + automation design"
+        "description": "Use HubSpot workflows and CRM context to drive consistent lifecycle communications and reporting."
       }
     ],
-
+    "Brevo": [
+      {
+        "title": "Upgrade email marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Connect email campaigns to CRM data and sales activity for better targeting and ROI measurement."
+      }
+    ],
     "Salesforce": [
       {
         "title": "Assess CRM migration from Salesforce to HubSpot Sales Hub",
         "hubspotProduct": "Sales Hub",
         "priority": "high",
-        "reason": "Consolidate go-to-market operations in a single platform with faster adoption and connected customer data.",
-        "inboxOffer": "Salesforce migration + data mapping + workflow rebuild + training"
+        "description": "Consolidate go-to-market operations in a single platform with faster adoption and connected customer data."
+      },
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
       },
       {
         "title": "Implement bi-directional Salesforce sync with HubSpot",
-        "hubspotProduct": "Sales Hub",
+        "hubspotProduct": "Data Hub",
         "priority": "medium",
-        "reason": "Keep Salesforce as system of record while using HubSpot for marketing, sales enablement, and reporting.",
-        "inboxOffer": "Integration setup + field mapping + sync rules + QA"
+        "description": "Connect HubSpot's marketing automation with Salesforce CRM for unified customer data and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
       }
     ],
     "Microsoft Dynamics": [
       {
-        "title": "Evaluate replacing Dynamics with HubSpot CRM + Sales Hub",
+        "title": "Replace Dynamics CRM with HubSpot Sales Hub",
         "hubspotProduct": "Sales Hub",
         "priority": "high",
-        "reason": "Consolidate into a more user-friendly platform that connects sales, marketing, and service data.",
-        "inboxOffer": "CRM migration + process optimization + change management"
+        "description": "Simplify CRM operations with HubSpot's intuitive interface and unified customer platform."
       }
     ],
     "Pipedrive": [
       {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
         "title": "Upgrade from Pipedrive to HubSpot Sales Hub",
         "hubspotProduct": "Sales Hub",
         "priority": "high",
-        "reason": "Expand beyond basic pipeline tracking to sequences, automation, and CRM-connected marketing.",
-        "inboxOffer": "CRM migration + pipeline design + automation setup"
-      }
-    ],
-    "HubSpot": [
+        "description": "Add marketing automation, service tools, and advanced reporting to your sales pipeline management."
+      },
       {
-        "title": "Optimize your HubSpot portal for revenue growth",
+        "title": "Power marketing with HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
-        "priority": "high",
-        "reason": "Most portals benefit from improved data quality, lifecycle stages, automation design, and attribution reporting.",
-        "inboxOffer": "RevOps audit + portal cleanup + workflow optimization + reporting systems"
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
       }
     ],
-
-    "Intercom": [
+    "Zoho CRM": [
       {
-        "title": "Replace Intercom with HubSpot Service Hub",
-        "hubspotProduct": "Service Hub",
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
         "priority": "high",
-        "reason": "Unify chat, inbox, tickets, and customer context in HubSpot for connected support and reporting.",
-        "inboxOffer": "Service Hub setup + conversation migration + ticket workflows"
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Consolidate Zoho CRM into HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Unify sales, marketing, and service operations in a single, user-friendly platform."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Copper": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      },
+      {
+        "title": "Replace Copper with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Expand beyond basic CRM to include marketing automation and customer service capabilities."
       }
     ],
     "Zendesk": [
       {
-        "title": "Migrate support operations to HubSpot Service Hub",
+        "title": "Consolidate customer service into HubSpot Service Hub",
         "hubspotProduct": "Service Hub",
         "priority": "high",
-        "reason": "Centralize support alongside marketing and sales data for a unified customer experience.",
-        "inboxOffer": "Zendesk migration + ticket workflow rebuild + knowledge base setup"
+        "description": "Unify support tickets, knowledge base, and customer feedback with CRM data for better service delivery."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
       }
     ],
     "Freshdesk": [
       {
-        "title": "Move ticketing to HubSpot Service Hub",
+        "title": "Replace Freshdesk with HubSpot Service Hub",
         "hubspotProduct": "Service Hub",
         "priority": "high",
-        "reason": "Connect support data directly to CRM records for better context and lifecycle reporting.",
-        "inboxOffer": "Support migration + SLA configuration + team inbox setup"
+        "description": "Connect customer service to marketing and sales data for complete customer lifecycle management."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "Intercom": [
+      {
+        "title": "Consolidate Intercom into HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "description": "Unify live chat, messaging, and support with CRM for better customer context and automation."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
       }
     ],
     "Drift": [
       {
         "title": "Replace Drift with HubSpot conversational tools",
-        "hubspotProduct": "Service Hub",
-        "priority": "high",
-        "reason": "Use HubSpot chat and automation to qualify leads and route conversations with CRM context.",
-        "inboxOffer": "Chat migration + bot setup + routing workflows"
-      }
-    ],
-
-    "Shopify": [
-      {
-        "title": "Integrate Shopify with HubSpot for unified commerce reporting",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Connect ecommerce data to lifecycle automation and attribution to increase retention and LTV.",
-        "inboxOffer": "Shopify integration + ecommerce automation + customer journey workflows"
+        "description": "Use HubSpot chatbots and live chat connected to CRM for better lead qualification and routing."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "LiveChat": [
+      {
+        "title": "Centralize chat conversations in HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "medium",
+        "description": "Connect chat interactions to CRM records for better customer context and follow-up automation."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "Shopify": [
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Connect Shopify to HubSpot for lifecycle marketing",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Sync customer and order data to HubSpot for personalized retention campaigns and revenue attribution."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
       }
     ],
     "WooCommerce": [
       {
-        "title": "Connect WooCommerce to HubSpot for lifecycle marketing",
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Sync orders and customer data to automate retention campaigns and track revenue attribution.",
-        "inboxOffer": "WooCommerce integration + workflows + reporting dashboards"
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Integrate WooCommerce with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use ecommerce data to drive targeted campaigns, cart recovery, and customer retention strategies."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "BigCommerce": [
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Connect BigCommerce to HubSpot for ecommerce automation",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Drive repeat purchases and improve LTV with CRM-powered segmentation and lifecycle messaging."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
       }
     ],
     "Magento": [
       {
-        "title": "Integrate Magento with HubSpot for segmentation and automation",
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
         "priority": "medium",
-        "reason": "Use CRM + commerce signals to personalize campaigns and improve lifecycle conversion.",
-        "inboxOffer": "Magento integration + automation strategy + reporting"
+        "description": "Turn buyer intent into deals."
+      },
+      {
+        "title": "Integrate Magento with HubSpot for unified customer data",
+        "hubspotProduct": "Data Hub",
+        "priority": "medium",
+        "description": "Connect enterprise ecommerce data to CRM for better customer intelligence and marketing automation."
       }
     ],
-
     "Stripe": [
       {
-        "title": "Connect Stripe to HubSpot Commerce Hub for revenue visibility",
+        "title": "Connect Stripe to HubSpot Commerce Hub",
         "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Sync payment and subscription data to CRM for better customer intelligence and revenue tracking."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
         "priority": "medium",
-        "reason": "Centralize payments context with customer records to improve billing workflows and reporting.",
-        "inboxOffer": "Stripe integration + revenue reporting + subscription tracking"
+        "description": "Use payment events to automate retention."
       }
     ],
     "PayPal": [
       {
-        "title": "Centralize payment tracking with HubSpot Commerce Hub",
+        "title": "Track PayPal transactions in HubSpot",
         "hubspotProduct": "Commerce Hub",
         "priority": "medium",
-        "reason": "Improve billing visibility and connect payment events to CRM records and lifecycle automation.",
-        "inboxOffer": "Payment integration + billing workflows + reporting"
-      }
-    ],
-
-    "Slack": [
+        "description": "Connect payment data to customer records for complete revenue visibility."
+      },
       {
-        "title": "Integrate Slack with HubSpot for real-time notifications",
-        "hubspotProduct": "Sales Hub",
-        "priority": "low",
-        "reason": "Get alerts for high-value leads, ticket activity, and deal updates where teams work daily.",
-        "inboxOffer": "Slack integration + notification workflows"
-      }
-    ],
-    "Zoom": [
-      {
-        "title": "Connect Zoom meetings to HubSpot CRM records",
-        "hubspotProduct": "Sales Hub",
-        "priority": "low",
-        "reason": "Improve visibility by logging meetings and syncing engagement data to contacts and deals.",
-        "inboxOffer": "Zoom integration + meeting workflow automation"
-      }
-    ],
-    "Calendly": [
-      {
-        "title": "Consolidate scheduling into HubSpot meetings",
-        "hubspotProduct": "Sales Hub",
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
         "priority": "medium",
-        "reason": "Tie scheduling directly to CRM records, routing, and follow-up automation.",
-        "inboxOffer": "Meetings setup + routing + lifecycle automation"
+        "description": "Use payment events to automate retention."
       }
     ],
     "Typeform": [
       {
-        "title": "Move forms to HubSpot for unified lead capture and routing",
+        "title": "Replace Typeform with HubSpot forms and workflows",
         "hubspotProduct": "Marketing Hub",
         "priority": "medium",
-        "reason": "Use CRM-native forms and workflows for cleaner routing, enrichment, and attribution.",
-        "inboxOffer": "Form migration + conversion optimization + routing automation"
+        "description": "Capture leads directly in CRM with native forms that trigger instant automation and routing."
+      },
+      {
+        "title": "Route leads to sales with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Auto-create deals from form submissions."
+      }
+    ],
+    "Jotform": [
+      {
+        "title": "Consolidate forms into HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use CRM-native forms with automatic enrichment, routing, and lifecycle automation."
+      },
+      {
+        "title": "Route leads to sales with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Auto-create deals from form submissions."
+      }
+    ],
+    "Google Forms": [
+      {
+        "title": "Upgrade to HubSpot forms for CRM-connected lead capture",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Replace basic forms with intelligent lead capture that includes routing, scoring, and automation."
+      }
+    ],
+    "Gravity Forms": [
+      {
+        "title": "Migrate WordPress forms to HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Centralize lead data in CRM with instant routing and lifecycle automation."
+      }
+    ],
+    "Calendly": [
+      {
+        "title": "Replace Calendly with HubSpot meetings tool",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Use CRM-native scheduling with automatic contact creation, routing rules, and follow-up sequences."
+      },
+      {
+        "title": "Track meeting influence in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "low",
+        "description": "Attribute meetings to campaigns."
+      }
+    ],
+    "Acuity Scheduling": [
+      {
+        "title": "Consolidate scheduling into HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Connect booking to CRM records for better lead tracking and automated follow-up."
+      },
+      {
+        "title": "Track meeting influence in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "low",
+        "description": "Attribute meetings to campaigns."
+      }
+    ],
+    "SurveyMonkey": [
+      {
+        "title": "Collect feedback with HubSpot Service Hub surveys",
+        "hubspotProduct": "Service Hub",
+        "priority": "medium",
+        "description": "Tie survey responses to customer records and trigger automated follow-ups based on feedback."
+      }
+    ],
+    "Qualtrics": [
+      {
+        "title": "Connect enterprise feedback to HubSpot CRM",
+        "hubspotProduct": "Service Hub",
+        "priority": "medium",
+        "description": "Link survey data to customer records for better service delivery and retention strategies."
+      }
+    ],
+    "Hotjar": [
+      {
+        "title": "Complement behavior analytics with HubSpot lifecycle data",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "low",
+        "description": "Connect session recordings and heatmaps to CRM data for deeper conversion insights."
+      }
+    ],
+    "Crazy Egg": [
+      {
+        "title": "Connect heatmap insights to HubSpot conversion tracking",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "low",
+        "description": "Combine visual analytics with CRM data to improve landing page and form performance."
+      }
+    ],
+    "Optimizely": [
+      {
+        "title": "Run conversion experiments with HubSpot testing tools",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use native A/B testing on landing pages, emails, and CTAs connected to CRM outcomes."
+      }
+    ],
+    "VWO": [
+      {
+        "title": "Consolidate testing into HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Run CRM-connected experiments that measure impact on leads and revenue, not just clicks."
+      }
+    ],
+    "Segment": [
+      {
+        "title": "Replace Segment with HubSpot Data Hub for customer data",
+        "hubspotProduct": "Data Hub",
+        "priority": "high",
+        "description": "Unify customer data collection and activation with native CRM integration and simpler operations."
+      }
+    ],
+    "mParticle": [
+      {
+        "title": "Consolidate customer data platform into HubSpot",
+        "hubspotProduct": "Data Hub",
+        "priority": "high",
+        "description": "Reduce CDP complexity while maintaining data quality and activation capabilities in HubSpot."
+      }
+    ],
+    "Zapier": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Replace workflows with native HubSpot integrations and automations",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce third-party dependencies and improve data reliability with HubSpot's native workflow tools."
+      }
+    ],
+    "Slack": [
+      {
+        "title": "Connect Slack to HubSpot for sales and service notifications",
+        "hubspotProduct": "Sales Hub",
+        "priority": "low",
+        "description": "Get real-time alerts on CRM activity and enable team collaboration around deals and tickets."
+      }
+    ],
+    "Asana": [
+      {
+        "title": "Connect project management to HubSpot customer data",
+        "hubspotProduct": "Service Hub",
+        "priority": "low",
+        "description": "Link customer projects and tasks to CRM records for better account management."
+      }
+    ],
+    "React": [
+      {
+        "title": "Build modern web experiences with HubSpot CMS and React",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "description": "Use HubSpot's JavaScript capabilities to create dynamic, CRM-connected web experiences."
+      }
+    ],
+    "Vue.js": [
+      {
+        "title": "Develop CRM-connected web apps with HubSpot CMS",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "description": "Build interactive experiences that leverage CRM data for personalization."
+      }
+    ],
+    "Contentful": [
+      {
+        "title": "Consolidate headless CMS into HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Simplify content operations while maintaining flexibility with HubSpot's CMS and CRM integration."
+      }
+    ],
+    "Sanity": [
+      {
+        "title": "Replace headless CMS with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Reduce complexity and connect content directly to customer data and marketing automation."
+      }
+    ],
+    "Unbounce": [
+      {
+        "title": "Consolidate landing pages into HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use CRM-native landing pages with better personalization, A/B testing, and attribution."
+      }
+    ],
+    "Instapage": [
+      {
+        "title": "Replace Instapage with HubSpot landing pages",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Create landing pages that automatically sync leads to CRM and trigger lifecycle automation."
+      }
+    ],
+    "Terminus": [
+      {
+        "title": "Run account-based marketing natively in HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use HubSpot's ABM tools for target accounts, personalization, and account-level reporting."
+      }
+    ],
+    "Demandbase": [
+      {
+        "title": "Consolidate ABM into HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Simplify account-based strategies with native tools for targeting, engagement, and attribution."
+      }
+    ],
+    "Outreach": [
+      {
+        "title": "Replace sales engagement platform with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Use native sequences, templates, and automation connected directly to CRM records."
+      }
+    ],
+    "SalesLoft": [
+      {
+        "title": "Consolidate sales engagement into HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Unify cadences, email tracking, and call logging in your CRM platform."
+      }
+    ],
+    "ChartMogul": [
+      {
+        "title": "Track subscription metrics in HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "medium",
+        "description": "Monitor MRR, churn, and customer LTV using CRM-native reporting and dashboards."
+      }
+    ],
+    "ProfitWell": [
+      {
+        "title": "Centralize subscription analytics in HubSpot",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "medium",
+        "description": "Track subscription health and revenue metrics alongside customer lifecycle data."
+      }
+    ],
+    "DocuSign": [
+      {
+        "title": "Streamline contract workflows with HubSpot integrations",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Send, track, and store signed documents directly from CRM deal records."
+      }
+    ],
+    "PandaDoc": [
+      {
+        "title": "Connect proposal software to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Generate proposals from CRM data and track engagement for better sales insights."
+      }
+    ],
+    "Yoast SEO": [
+      {
+        "title": "Use HubSpot's native SEO tools and recommendations",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Optimize content with built-in SEO suggestions, topic clusters, and performance tracking."
+      }
+    ],
+    "Ahrefs": [
+      {
+        "title": "Complement SEO research with HubSpot's content strategy tools",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "description": "Build topic clusters and pillar pages in HubSpot for better content organization and SEO."
+      }
+    ],
+    "SEMrush": [
+      {
+        "title": "Execute SEO strategy with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "description": "Use research insights to build optimized content in HubSpot's CRM-connected CMS."
+      }
+    ],
+    "Iconosquare": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Instagram Feed for WordPress": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Instagram Feed for WordPress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Instagram Feed for WordPress with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Intercom Articles": [
+      {
+        "title": "Replace Intercom Articles with HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "description": "Unify chat, tickets, and knowledge base with CRM."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "Klaviyo Customer Hub": [
+      {
+        "title": "Replace Klaviyo Customer Hub with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Unify email, automation, and attribution."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
+      }
+    ],
+    "Klaviyo Data Platform": [
+      {
+        "title": "Replace Klaviyo Data Platform with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Unify email, automation, and attribution."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
+      }
+    ],
+    "Klaviyo Forms": [
+      {
+        "title": "Replace Klaviyo Forms with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Unify email, automation, and attribution."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
+      }
+    ],
+    "Klaviyo Reviews": [
+      {
+        "title": "Replace Klaviyo Reviews with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Unify email, automation, and attribution."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
+      }
+    ],
+    "Leadsquared": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "LocalGov Drupal": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside LocalGov Drupal",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace LocalGov Drupal with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "MailChimp": [
+      {
+        "title": "Replace MailChimp with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Unify email, automation, and attribution."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
+      }
+    ],
+    "MailChimp for WooCommerce": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside MailChimp for WooCommerce",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "MailChimp for WordPress": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside MailChimp for WordPress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace MailChimp for WordPress with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Make-Sense": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "MakeShop": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "MakeShopKorea": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Maker": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Makeswift": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Marketo Forms": [
+      {
+        "title": "Consolidate marketing automation into HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Run automation, attribution, and CRM in one system."
+      }
+    ],
+    "MyLiveChat": [
+      {
+        "title": "Replace MyLiveChat with HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "description": "Unify chat, tickets, and knowledge base with CRM."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "Optimizely Commerce": [
+      {
+        "title": "Run A/B tests in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Native experimentation with attribution."
+      }
+    ],
+    "Optimizely Content Management": [
+      {
+        "title": "Run A/B tests in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Native experimentation with attribution."
+      }
+    ],
+    "Pagemaker": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Parts Square": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "PayPal Credit": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "PayPal Marketing Solutions": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Poll Maker": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Popup Maker": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "PrestaShop": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside PrestaShop",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "ProProfs Quiz Maker": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "pdfmake": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Rewix": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Rewix",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Rewix with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Rudderstack": [
+      {
+        "title": "Sync data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Use native data sync and workflows."
+      }
+    ],
+    "Salesforce Audience Studio": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Salesforce Audience Studio to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Salesforce Commerce Cloud": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Salesforce Commerce Cloud to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Salesforce Desk": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Salesforce Desk to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Salesforce Experience Cloud": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Salesforce Experience Cloud to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Salesforce Interaction Studio": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Salesforce Interaction Studio to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Salesforce Marketing Cloud Account Engagement": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Salesforce Marketing Cloud Account Engagement to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Salesforce Marketing Cloud Email Studio": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Salesforce Marketing Cloud Email Studio to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Salesforce Service Cloud": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Salesforce Service Cloud to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Sections.design Shopify App Optimization": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Sections.design Shopify App Optimization",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Segment Consent Manager": [
+      {
+        "title": "Sync data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Use native data sync and workflows."
+      }
+    ],
+    "SegmentStream": [
+      {
+        "title": "Sync data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Use native data sync and workflows."
+      }
+    ],
+    "Segmentify": [
+      {
+        "title": "Sync data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Use native data sync and workflows."
+      }
+    ],
+    "Sendgrid": [
+      {
+        "title": "Replace Sendgrid with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Unify email, automation, and attribution."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
+      }
+    ],
+    "Shopify Buy Button": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Shopify Buy Button",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Shopify Chat": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Shopify Chat",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Shopify Consent Management": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Shopify Consent Management",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Shopify Geolocation App": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Shopify Geolocation App",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Shopify Product Reviews": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Shopify Product Reviews",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Shopify Web Components": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Shopify Web Components",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Shopmaker": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Silverstripe": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Solusquare OmniCommerce Cloud": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Square": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Square Online": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Squarespace Commerce": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Squarespace Commerce",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Squarespace Commerce with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "TVSquared": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Tawk.to": [
+      {
+        "title": "Replace Tawk.to with HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "description": "Unify chat, tickets, and knowledge base with CRM."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "Tealium": [
+      {
+        "title": "Reduce tag sprawl with HubSpot tracking",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use native tracking tied to CRM."
+      }
+    ],
+    "Tealium AudienceStream": [
+      {
+        "title": "Reduce tag sprawl with HubSpot tracking",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use native tracking tied to CRM."
+      }
+    ],
+    "Tealium Consent Management": [
+      {
+        "title": "Reduce tag sprawl with HubSpot tracking",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use native tracking tied to CRM."
+      }
+    ],
+    "The Theme Foundry Make": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Translate WordPress": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Translate WordPress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Translate WordPress with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Trustmaker": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "VWO Engage": [
+      {
+        "title": "Run A/B tests in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Native experimentation with attribution."
+      }
+    ],
+    "Web Stories for WordPress": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Web Stories for WordPress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Web Stories for WordPress with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WebToffee Stripe Payment Plugin for WooCommerce": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside WebToffee Stripe Payment Plugin for WooCommerce",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Webflow Ecommerce": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Webflow Ecommerce",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Webflow Ecommerce with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Wix Answers": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Wix Answers",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Wix Answers with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Wix eCommerce": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Wix eCommerce",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Wix eCommerce with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WooCommerce Blocks": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside WooCommerce Blocks",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "WooCommerce Multilingual": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside WooCommerce Multilingual",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "WooCommerce PayPal Checkout Payment Gateway": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside WooCommerce PayPal Checkout Payment Gateway",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "WooCommerce PayPal Payments": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside WooCommerce PayPal Payments",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "WooCommerce Stripe Payment Gateway": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside WooCommerce Stripe Payment Gateway",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "WooCommerce Subscriptions": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside WooCommerce Subscriptions",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "WordPress Block Editor": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress Block Editor",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace WordPress Block Editor with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WordPress Default": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress Default",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace WordPress Default with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WordPress Multisite": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress Multisite",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace WordPress Multisite with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WordPress Popular Posts": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress Popular Posts",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace WordPress Popular Posts with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WordPress Project Manager": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress Project Manager",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace WordPress Project Manager with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WordPress Site Editor": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress Site Editor",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace WordPress Site Editor with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WordPress Super Cache": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress Super Cache",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace WordPress Super Cache with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "WordPress VIP": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside WordPress VIP",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace WordPress VIP with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Wufoo": [
+      {
+        "title": "Replace Wufoo with HubSpot forms",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Capture leads directly into CRM with automation."
+      },
+      {
+        "title": "Route leads to sales with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Auto-create deals from form submissions."
+      }
+    ],
+    "Yoast SEO for Shopify": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Yoast SEO for Shopify",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "YouCam Makeup": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Zendesk Chat": [
+      {
+        "title": "Replace Zendesk Chat with HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "description": "Unify chat, tickets, and knowledge base with CRM."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "Zendesk Sunshine Conversations": [
+      {
+        "title": "Replace Zendesk Sunshine Conversations with HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "description": "Unify chat, tickets, and knowledge base with CRM."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "AMP for WordPress": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside AMP for WordPress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace AMP for WordPress with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "BigCommerce B2B Edition": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside BigCommerce B2B Edition",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Braintree": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Brizy WordPress": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Brizy WordPress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Brizy WordPress with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Campaign Monitor": [
+      {
+        "title": "Replace Campaign Monitor with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Unify email, automation, and attribution."
+      },
+      {
+        "title": "Enable sales visibility with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Share engagement with reps."
+      }
+    ],
+    "Claris FileMaker": [
+      {
+        "title": "Drive lifecycle automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce glue logic with native workflows."
+      },
+      {
+        "title": "Reduce glue tools with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Use native workflows and data sync."
+      }
+    ],
+    "Contentsquare": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Coppermine": [
+      {
+        "title": "Automate data ops with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Migrate and keep data in sync cleanly."
+      },
+      {
+        "title": "Migrate from Coppermine to HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate CRM, pipelines, and reporting."
+      },
+      {
+        "title": "Power marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie CRM to lifecycle campaigns."
+      }
+    ],
+    "Craft CMS": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Craft CMS",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Craft CMS with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Dominate WooCommerce": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Dominate WooCommerce",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Doppler for WooCommerce": [
+      {
+        "title": "Add HubSpot Commerce Hub alongside Doppler for WooCommerce",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect storefront activity, payments, and CRM for better revenue ops."
+      },
+      {
+        "title": "Automate lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use purchase data for campaigns and retention."
+      },
+      {
+        "title": "Close revenue with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Turn buyer intent into deals."
+      }
+    ],
+    "Drupal Commerce": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Drupal Commerce",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Drupal Commerce with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Drupal Multisite": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Drupal Multisite",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Drupal Multisite with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Easy Hide PayPal": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Email Encoder for Wordpress": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Email Encoder for Wordpress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Email Encoder for Wordpress with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Formstack": [
+      {
+        "title": "Replace Formstack with HubSpot forms",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Capture leads directly into CRM with automation."
+      },
+      {
+        "title": "Route leads to sales with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Auto-create deals from form submissions."
+      }
+    ],
+    "FullStory": [
+      {
+        "title": "Improve CRO with HubSpot experiments",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use experiments and conversion reporting tied to CRM."
+      }
+    ],
+    "GoSquared": [
+      {
+        "title": "Connect payments with HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Tie payments to deals and reporting."
+      },
+      {
+        "title": "Trigger lifecycle campaigns with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use payment events to automate retention."
+      }
+    ],
+    "Google Analytics Enhanced eCommerce": [
+      {
+        "title": "Operationalize events with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Sync events into CRM properties."
+      },
+      {
+        "title": "Unify analytics in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Tie analytics to contacts and revenue attribution."
+      }
+    ],
+    "Google Tag Manager for WordPress": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside Google Tag Manager for WordPress",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace Google Tag Manager for WordPress with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
+      }
+    ],
+    "Help Scout": [
+      {
+        "title": "Replace Help Scout with HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "description": "Unify chat, tickets, and knowledge base with CRM."
+      },
+      {
+        "title": "Convert conversations into pipeline with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Route qualified chats to sales."
+      },
+      {
+        "title": "Sync service data with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "medium",
+        "description": "Keep customer data clean across tools."
+      }
+    ],
+    "Hotjar Incoming Feedback": [
+      {
+        "title": "Improve CRO with HubSpot experiments",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Use experiments and conversion reporting tied to CRM."
+      }
+    ],
+    "HubSpot WordPress plugin": [
+      {
+        "title": "Power growth with HubSpot Marketing Hub alongside HubSpot WordPress plugin",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Automate lead capture and attribution from site traffic."
+      },
+      {
+        "title": "Replace HubSpot WordPress plugin with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate CMS, hosting, SEO, and CRM on one platform."
+      },
+      {
+        "title": "Enable sales follow-up with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface engagement to reps."
       }
     ]
   },
-
   "byCategory": {
     "CMS": [
       {
-        "title": "Consolidate website management into HubSpot Content Hub",
+        "title": "Connect CMS to marketing automation with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Tie content to campaigns, lead capture, and attribution."
+      },
+      {
+        "title": "Consolidate website management in HubSpot Content Hub",
         "hubspotProduct": "Content Hub",
         "priority": "high",
-        "reason": "Unify website, landing pages, SEO, and lead capture with CRM-connected reporting.",
-        "inboxOffer": "Website migration + custom modules + SEO + conversion optimization"
+        "description": "Replace fragmented CMS with a platform that connects content to CRM, lead capture, and marketing automation."
+      },
+      {
+        "title": "Align website activity with sales in HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Surface website engagement to sales for better follow-up."
       }
     ],
-    "Blogs": [
+    "Message boards": [
       {
-        "title": "Consolidate blog and content marketing into HubSpot",
+        "title": "Create gated communities with HubSpot CMS + CRM",
         "hubspotProduct": "Content Hub",
-        "priority": "high",
-        "reason": "Centralize publishing, SEO optimization, CTAs, and lead capture connected to CRM records.",
-        "inboxOffer": "Blog migration + SEO strategy + conversion optimization"
+        "priority": "low",
+        "description": "Use gated content and CRM to manage community engagement."
+      }
+    ],
+    "Database managers": [
+      {
+        "title": "Reduce DB tooling with HubSpot CMS",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Move content/data needs into managed CMS."
       }
     ],
     "Documentation": [
       {
-        "title": "Use HubSpot Content Hub for scalable content publishing",
+        "title": "Centralize documentation in HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "medium",
+        "description": "Build a knowledge base connected to support tickets and customer records for better self-service."
+      }
+    ],
+    "Widgets": [
+      {
+        "title": "Replace widgets with HubSpot CMS modules",
         "hubspotProduct": "Content Hub",
         "priority": "medium",
-        "reason": "Publish and manage structured content in a platform connected to CRM and reporting.",
-        "inboxOffer": "Content architecture + migration planning + implementation"
+        "description": "Use reusable CMS modules for maintainable UI."
       }
     ],
-
-    "CRM": [
+    "Ecommerce": [
       {
-        "title": "Consolidate customer data and sales workflows in HubSpot Sales Hub",
+        "title": "Connect ecommerce platform to HubSpot for lifecycle marketing",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Sync customer and order data to drive personalized campaigns, cart recovery, and retention strategies."
+      },
+      {
+        "title": "Power lifecycle marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use ecommerce data to automate lifecycle campaigns."
+      },
+      {
+        "title": "Equip reps to close revenue in HubSpot Sales Hub",
         "hubspotProduct": "Sales Hub",
-        "priority": "high",
-        "reason": "Unify pipeline management, automation, reporting, and team alignment around a single customer record.",
-        "inboxOffer": "CRM migration + data model design + sales enablement + automation"
+        "priority": "medium",
+        "description": "Turn purchase intent into deals."
       }
     ],
-
-    "Email marketing": [
+    "Photo galleries": [
       {
-        "title": "Consolidate email marketing into HubSpot Marketing Hub",
-        "hubspotProduct": "Marketing Hub",
-        "priority": "high",
-        "reason": "Personalize campaigns using CRM data and automate lifecycle journeys with unified reporting.",
-        "inboxOffer": "Email migration + automation workflows + deliverability optimization"
+        "title": "Manage media in HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Centralize assets and optimize delivery."
       }
     ],
-    "Marketing automation": [
+    "Wikis": [
       {
-        "title": "Build lifecycle automation in HubSpot Marketing Hub",
-        "hubspotProduct": "Marketing Hub",
-        "priority": "high",
-        "reason": "Automate nurturing, scoring, routing, and lifecycle management tied directly to CRM stages.",
-        "inboxOffer": "Lifecycle design + workflow architecture + lead scoring + reporting"
+        "title": "Centralize documentation in HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "description": "Manage docs with permissions and CRM context."
       }
     ],
-    "Advertising": [
+    "Hosting panels": [
       {
-        "title": "Connect advertising to revenue attribution in HubSpot",
-        "hubspotProduct": "Marketing Hub",
+        "title": "Eliminate hosting panels with HubSpot hosting",
+        "hubspotProduct": "Content Hub",
         "priority": "high",
-        "reason": "Track ad spend to pipeline and revenue using CRM lifecycle stages and reporting.",
-        "inboxOffer": "Ad integration + attribution + ROI dashboards"
+        "description": "Managed hosting replaces control panels."
       }
     ],
     "Analytics": [
       {
-        "title": "Build attribution and reporting tied to CRM lifecycle stages",
+        "title": "Unify analytics and attribution in HubSpot Marketing Hub",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Measure what drives pipeline and revenue with unified dashboards and lifecycle reporting.",
-        "inboxOffer": "Attribution systems + custom dashboards + reporting governance"
-      }
-    ],
-    "A/B Testing": [
+        "description": "Replace disconnected analytics with CRM-native reporting that tracks marketing to revenue impact."
+      },
       {
-        "title": "Run conversion experiments in HubSpot",
-        "hubspotProduct": "Marketing Hub",
+        "title": "Operationalize analytics with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
         "priority": "medium",
-        "reason": "Test landing pages, CTAs, and emails to improve conversion rate and lead quality.",
-        "inboxOffer": "Experiment design + implementation + analysis and iteration"
+        "description": "Sync analytics events into CRM properties."
       }
     ],
-    "Conversion optimization": [
+    "Blogs": [
       {
-        "title": "Optimize conversion rates with HubSpot reporting and experimentation",
-        "hubspotProduct": "Marketing Hub",
+        "title": "Migrate blog to HubSpot Content Hub for better lead generation",
+        "hubspotProduct": "Content Hub",
         "priority": "high",
-        "reason": "Improve lead capture and funnel performance using CRM-connected measurement and iteration.",
-        "inboxOffer": "CRO audit + landing pages + experimentation program"
+        "description": "Connect blog content to CRM with native lead capture, SEO tools, and content attribution."
       }
     ],
-
-    "Form builders": [
+    "JavaScript frameworks": [
       {
-        "title": "Consolidate lead capture into HubSpot forms and workflows",
-        "hubspotProduct": "Marketing Hub",
-        "priority": "high",
-        "reason": "Use CRM-native forms with routing, enrichment, and automation tied to lifecycle stages.",
-        "inboxOffer": "Form migration + progressive profiling + routing workflows"
-      }
-    ],
-    "Appointment scheduling": [
-      {
-        "title": "Use HubSpot meetings for scheduling connected to CRM",
-        "hubspotProduct": "Sales Hub",
+        "title": "Simplify frontend with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
         "priority": "medium",
-        "reason": "Tie booking to contact records, lead routing, and automated follow-up sequences.",
-        "inboxOffer": "Meetings setup + routing + follow-up automation"
+        "description": "Reduce custom frontend maintenance using HubSpot CMS components."
       }
     ],
-
-    "Customer support": [
+    "Issue trackers": [
       {
-        "title": "Unify customer support operations in HubSpot Service Hub",
-        "hubspotProduct": "Service Hub",
-        "priority": "high",
-        "reason": "Manage tickets, SLAs, knowledge base, and customer feedback tied to CRM records.",
-        "inboxOffer": "Service Hub setup + ticket workflows + knowledge base + reporting"
-      }
-    ],
-    "Live chat": [
-      {
-        "title": "Centralize chat and customer conversations in HubSpot",
-        "hubspotProduct": "Service Hub",
-        "priority": "high",
-        "reason": "Route conversations, qualify leads, and connect interactions to CRM records for better context and reporting.",
-        "inboxOffer": "Chat setup + routing workflows + automation"
-      }
-    ],
-    "Surveys": [
-      {
-        "title": "Collect feedback and tie it to customer records in HubSpot",
+        "title": "Manage customer issues in HubSpot Service Hub",
         "hubspotProduct": "Service Hub",
         "priority": "medium",
-        "reason": "Measure customer satisfaction and automate follow-ups using CRM-linked survey responses.",
-        "inboxOffer": "Feedback program + automation + reporting dashboards"
+        "description": "Use tickets and pipelines instead of dev‑centric tools."
+      }
+    ],
+    "Video players": [
+      {
+        "title": "Host and track video in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Track engagement tied to contacts."
       }
     ],
     "Comment systems": [
       {
-        "title": "Centralize engagement signals and follow-ups in HubSpot",
-        "hubspotProduct": "Marketing Hub",
+        "title": "Replace comments with HubSpot forms & CRM",
+        "hubspotProduct": "Content Hub",
         "priority": "low",
-        "reason": "Capture engagement signals and connect them to CRM records to improve targeting and follow-up.",
-        "inboxOffer": "Engagement tracking + routing + lifecycle automation"
+        "description": "Capture engagement as leads instead of unmanaged comments."
+      }
+    ],
+    "Security": [
+      {
+        "title": "Improve security with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Managed security, SSL, and updates reduce risk."
+      }
+    ],
+    "Font scripts": [
+      {
+        "title": "Standardize assets in HubSpot CMS",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "description": "Reduce external dependencies."
+      }
+    ],
+    "Web frameworks": [
+      {
+        "title": "Move site to HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Consolidate site management with CMS + CRM + SEO."
+      }
+    ],
+    "Miscellaneous": [
+      {
+        "title": "Consolidate tools into HubSpot platform",
+        "hubspotProduct": "Operations Hub",
+        "priority": "low",
+        "description": "Reduce tool sprawl with a unified platform."
+      }
+    ],
+    "Editors": [
+      {
+        "title": "Standardize content editing in HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Replace fragmented editors with a single CMS editor."
+      }
+    ],
+    "LMS": [
+      {
+        "title": "Build learning experiences with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Create gated educational content connected to CRM for better lead nurturing and attribution."
+      }
+    ],
+    "Web servers": [
+      {
+        "title": "Host on HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Reduce server maintenance with managed hosting."
+      },
+      {
+        "title": "Improve security & compliance with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Managed hosting with SSL and updates."
+      }
+    ],
+    "Caching": [
+      {
+        "title": "Use HubSpot built‑in CDN and caching",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Built‑in performance optimizations reduce ops overhead."
+      }
+    ],
+    "Rich text editors": [
+      {
+        "title": "Use HubSpot native editors",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Reduce plugin sprawl with built‑in editing tools."
+      }
+    ],
+    "JavaScript graphics": [
+      {
+        "title": "Use HubSpot CMS components for visuals",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "description": "Simplify maintenance with CMS modules."
+      }
+    ],
+    "Mobile frameworks": [
+      {
+        "title": "Deliver mobile‑friendly pages with HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Use responsive CMS themes and hosting."
+      }
+    ],
+    "Programming languages": [],
+    "Operating systems": [],
+    "Search engines": [],
+    "Webmail": [],
+    "CDN": [
+      {
+        "title": "Use HubSpot CDN",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Leverage managed CDN for performance and security."
+      }
+    ],
+    "Marketing automation": [
+      {
+        "title": "Consolidate marketing automation in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Unify email, workflows, lead scoring, and attribution in a single CRM-connected platform."
+      }
+    ],
+    "Web server extensions": [],
+    "Databases": [],
+    "Maps": [
+      {
+        "title": "Embed maps via HubSpot CMS modules",
+        "hubspotProduct": "Content Hub",
+        "priority": "low",
+        "description": "Standardize embeds and tracking."
+      }
+    ],
+    "Advertising": [
+      {
+        "title": "Connect ad platforms to HubSpot for ROI tracking",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Track ad spend to pipeline and revenue with CRM-native attribution and reporting."
+      }
+    ],
+    "Network devices": [],
+    "Media servers": [],
+    "Webcams": [],
+    "Payment processors": [
+      {
+        "title": "Sync payment data to HubSpot Commerce Hub",
+        "hubspotProduct": "Commerce Hub",
+        "priority": "high",
+        "description": "Connect transactions to customer records for complete revenue visibility and lifecycle automation."
+      }
+    ],
+    "Tag managers": [
+      {
+        "title": "Standardize tracking with HubSpot analytics and governance",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Reduce tag complexity and improve data quality with simplified tracking aligned to CRM outcomes."
+      }
+    ],
+    "CI": [],
+    "Control systems": [],
+    "Remote access": [],
+    "Development": [],
+    "Network storage": [],
+    "Feed readers": [],
+    "DMS": [],
+    "Page builders": [
+      {
+        "title": "Build drag-and-drop pages in HubSpot Content Hub",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Use HubSpot's page builder for marketing teams to create CRM-connected landing pages and website content."
+      }
+    ],
+    "Live chat": [
+      {
+        "title": "Centralize customer conversations in HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "high",
+        "description": "Connect chat, email, and phone to CRM records for complete conversation history and automated routing."
+      },
+      {
+        "title": "Route chats to sales pipelines with HubSpot Sales Hub",
+        "hubspotProduct": "Sales Hub",
+        "priority": "medium",
+        "description": "Convert qualified chats into deals."
+      }
+    ],
+    "CRM": [
+      {
+        "title": "Automate data sync with HubSpot Operations Hub",
+        "hubspotProduct": "Operations Hub",
+        "priority": "high",
+        "description": "Keep CRM data clean and synced across tools."
+      },
+      {
+        "title": "Replace CRM with HubSpot's unified customer platform",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Consolidate sales, marketing, and service data in one CRM with native automation and reporting."
+      }
+    ],
+    "SEO": [
+      {
+        "title": "Automate lead capture from SEO traffic with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Convert organic traffic into CRM contacts with automation."
+      },
+      {
+        "title": "Execute SEO strategy with HubSpot Content Hub tools",
+        "hubspotProduct": "Content Hub",
+        "priority": "high",
+        "description": "Use native SEO recommendations, topic clusters, and performance tracking to improve organic visibility."
+      }
+    ],
+    "Accounting": [],
+    "Cryptominers": [],
+    "Static site generator": [],
+    "User onboarding": [],
+    "JavaScript libraries": [],
+    "Containers": [],
+    "PaaS": [],
+    "IaaS": [],
+    "Reverse proxies": [],
+    "Load balancers": [],
+    "UI frameworks": [],
+    "Cookie compliance": [
+      {
+        "title": "Implement compliant tracking with HubSpot",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Configure cookie consent and privacy controls aligned to GDPR and data protection requirements."
+      }
+    ],
+    "Accessibility": [],
+    "Authentication": [],
+    "SSL/TLS certificate authorities": [],
+    "Affiliate programs": [
+      {
+        "title": "Manage affiliate relationships in HubSpot CRM",
+        "hubspotProduct": "Sales Hub",
+        "priority": "low",
+        "description": "Track partner relationships, performance, and communications using CRM and custom properties."
+      }
+    ],
+    "Appointment scheduling": [
+      {
+        "title": "Use HubSpot meetings tool for CRM-connected scheduling",
+        "hubspotProduct": "Sales Hub",
+        "priority": "high",
+        "description": "Enable prospects to book directly into rep calendars with automatic contact creation and follow-up."
+      }
+    ],
+    "Surveys": [
+      {
+        "title": "Collect customer feedback with HubSpot Service Hub",
+        "hubspotProduct": "Service Hub",
+        "priority": "medium",
+        "description": "Send surveys that automatically update CRM records and trigger follow-up workflows based on responses."
+      }
+    ],
+    "A/B Testing": [
+      {
+        "title": "Run conversion experiments with HubSpot testing tools",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Test landing pages, emails, and CTAs with built-in A/B testing connected to conversion metrics."
+      }
+    ],
+    "Email": [
+      {
+        "title": "Upgrade email marketing with HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Connect email campaigns to CRM data for better personalization, automation, and revenue attribution."
+      }
+    ],
+    "Personalisation": [
+      {
+        "title": "Deliver personalized experiences with HubSpot smart content",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Use CRM data to personalize website, email, and landing page content for each visitor."
+      }
+    ],
+    "Retargeting": [
+      {
+        "title": "Connect retargeting to HubSpot lifecycle data",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Sync CRM audiences to ad platforms for precise retargeting based on lifecycle stage and behavior."
+      }
+    ],
+    "RUM": [],
+    "Geolocation": [],
+    "WordPress themes": [],
+    "Shopify themes": [],
+    "Drupal themes": [],
+    "Browser fingerprinting": [],
+    "Loyalty & rewards": [
+      {
+        "title": "Automate loyalty programs with HubSpot workflows",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Track customer behavior, automate rewards communications, and measure impact on retention."
+      }
+    ],
+    "Feature management": [],
+    "Segmentation": [
+      {
+        "title": "Build advanced segments with HubSpot lists and properties",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Create dynamic segments using CRM data, behavior, and lifecycle stages for precise targeting."
+      }
+    ],
+    "WordPress plugins": [],
+    "Hosting": [],
+    "Translation": [
+      {
+        "title": "Create multi-language content in HubSpot",
+        "hubspotProduct": "Content Hub",
+        "priority": "medium",
+        "description": "Use HubSpot's multi-language features to serve global audiences with localized, CRM-connected content."
       }
     ],
     "Reviews": [
       {
-        "title": "Use HubSpot to operationalize testimonials and advocacy",
+        "title": "Operationalize customer reviews with HubSpot",
         "hubspotProduct": "Marketing Hub",
         "priority": "medium",
-        "reason": "Collect and manage customer proof points and activate them in campaigns and landing pages.",
-        "inboxOffer": "Testimonial workflow + website integration + reporting"
+        "description": "Collect testimonials, automate review requests, and display social proof on website and campaigns."
       }
     ],
-
-    "Ecommerce": [
+    "Buy now pay later": [],
+    "Performance": [],
+    "Reservations & delivery": [],
+    "Referral marketing": [
       {
-        "title": "Connect ecommerce activity to lifecycle marketing in HubSpot",
+        "title": "Build referral programs with HubSpot workflows",
         "hubspotProduct": "Marketing Hub",
+        "priority": "medium",
+        "description": "Automate referral tracking, rewards, and communications using CRM and workflow automation."
+      }
+    ],
+    "Digital asset management": [],
+    "Content curation": [],
+    "Customer data platform": [
+      {
+        "title": "Unify customer data with HubSpot Data Hub",
+        "hubspotProduct": "Data Hub",
         "priority": "high",
-        "reason": "Use customer and purchase signals to drive segmentation, retention, and revenue attribution.",
-        "inboxOffer": "Ecommerce integration + lifecycle automation + retention strategy"
+        "description": "Connect data sources, improve data quality, and activate customer insights across marketing and sales."
       }
     ],
     "Cart abandonment": [
@@ -515,84 +3325,28 @@
         "title": "Recover abandoned carts with HubSpot automation",
         "hubspotProduct": "Marketing Hub",
         "priority": "high",
-        "reason": "Trigger recovery journeys based on cart events and customer lifecycle stages.",
-        "inboxOffer": "Cart recovery workflows + messaging optimization + reporting"
+        "description": "Trigger automated recovery sequences based on cart events and customer lifecycle stage."
       }
     ],
-    "Buy now pay later": [
+    "Shipping carriers": [],
+    "Shopify apps": [],
+    "Recruitment & staffing": [],
+    "Returns": [],
+    "Livestreaming": [],
+    "Ticket booking": [],
+    "Augmented reality": [],
+    "Cross border ecommerce": [],
+    "Fulfilment": [],
+    "Ecommerce frontends": [],
+    "Domain parking": [],
+    "Form builders": [
       {
-        "title": "Instrument checkout and lifecycle comms around flexible payments",
+        "title": "Replace form tools with HubSpot's CRM-native forms",
         "hubspotProduct": "Marketing Hub",
-        "priority": "medium",
-        "reason": "Improve conversion and retention with CRM-connected communications and reporting.",
-        "inboxOffer": "Checkout optimization + lifecycle comms + attribution"
-      }
-    ],
-    "Payment processors": [
-      {
-        "title": "Centralize revenue tracking with HubSpot Commerce Hub",
-        "hubspotProduct": "Commerce Hub",
-        "priority": "medium",
-        "reason": "Improve billing visibility and connect payment events to CRM records and lifecycle automation.",
-        "inboxOffer": "Payments integration + billing workflows + revenue reporting"
-      }
-    ],
-
-    "Customer data platform": [
-      {
-        "title": "Unify customer data and activation in HubSpot Data Hub",
-        "hubspotProduct": "Data Hub",
         "priority": "high",
-        "reason": "Connect external sources, improve data quality, and enable better segmentation and automation.",
-        "inboxOffer": "Data integration + governance + segmentation strategy"
+        "description": "Capture leads directly in CRM with progressive profiling, smart fields, and instant automation."
       }
     ],
-    "Database managers": [
-      {
-        "title": "Unify customer data sources with HubSpot Data Hub",
-        "hubspotProduct": "Data Hub",
-        "priority": "medium",
-        "reason": "Connect external data to HubSpot to improve visibility and activation across marketing and sales.",
-        "inboxOffer": "Data mapping + integrations + data quality automation"
-      }
-    ],
-
-    "Tag managers": [
-      {
-        "title": "Standardize tracking and reporting aligned to CRM outcomes",
-        "hubspotProduct": "Marketing Hub",
-        "priority": "medium",
-        "reason": "Reduce tag sprawl, define clean measurement, and improve attribution quality.",
-        "inboxOffer": "Tag audit + measurement plan + governance framework"
-      }
-    ],
-    "Cookie compliance": [
-      {
-        "title": "Implement compliant consent and tracking governance",
-        "hubspotProduct": "Marketing Hub",
-        "priority": "medium",
-        "reason": "Improve data quality and compliance with consistent consent capture and tracking policies.",
-        "inboxOffer": "Consent banner setup + compliance audit + tracking alignment"
-      }
-    ],
-
-    "Hosting": [
-      {
-        "title": "Reduce website ops overhead with HubSpot-managed hosting",
-        "hubspotProduct": "Content Hub",
-        "priority": "low",
-        "reason": "Simplify website operations by consolidating CMS and hosting into one connected platform.",
-        "inboxOffer": "Replatform assessment + migration + performance optimization"
-      }
-    ],
-    "Wikis": [
-      {
-        "title": "Centralize knowledge content with HubSpot Content Hub",
-        "hubspotProduct": "Content Hub",
-        "priority": "low",
-        "reason": "Organize and publish structured knowledge content connected to CRM and service workflows.",
-        "inboxOffer": "Information architecture + migration + enablement"
-      }
-    ]
+    "Fundraising & donations": []
   }
 }
