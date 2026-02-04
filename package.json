@@ -14,7 +14,10 @@
     "validate-config": "node src/scripts/validateConfig.js",
     "prestart": "npm run validate-config",
     "start": "node src/api/server.js",
-    "dev": "node src/api/server.js"
+    "dev": "node src/api/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "Team Debug",
@@ -22,5 +25,8 @@
   "type": "commonjs",
   "dependencies": {
     "cheerio": "^1.2.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
   }
 }
