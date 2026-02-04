@@ -108,7 +108,7 @@ See **docs/05-API.md** for full details.
 ## CLI Usage
 
 ```bash
-node src/cli/index.js https://example.com --pretty
+npm run cli -- https://example.com --format json-pretty  # (alias: --format json-pretty  # (alias: --pretty))
 ```
 
 See **docs/06-CLI.md** for more examples.

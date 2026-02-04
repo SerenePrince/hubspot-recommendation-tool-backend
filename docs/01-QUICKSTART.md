@@ -97,7 +97,7 @@ Expected response:
 You can run the analyzer without starting the server:
 
 ```bash
-node src/cli/index.js https://example.com --pretty
+npm run cli -- https://example.com --format json-pretty  # (alias: --format json-pretty  # (alias: --pretty))
 ```
 
 This is useful for:

@@ -14,11 +14,17 @@ const { formatHuman } = require("./formatHuman");
  *   node src/cli/index.js <url> [--format <json|json-pretty|human>] [--meta] [--raw]
  *
  * Flags:
- *   --format <mode>  Output format: json (default), json-pretty, human
- *   --human          Alias for --format human
- *   --pretty         Alias for --format json-pretty (back-compat)
- *   --meta           Include fetch/timing metadata (uses buildCleanReport) (default behavior)
- *   --raw            Print the full internal report (includes richer fields)
+ *   --format <mode>    Output format: json (default), json-pretty, human
+ *   --human            Alias for --format human
+ *   --pretty           Alias for --format json-pretty (back-compat)
+ *   --meta             Include fetch/timing metadata (default behavior)
+ *   --raw              Print the full internal report (includes richer fields)
+ *
+ * Human output flags (only apply to --format human):
+ *   --wide             Disable column shrinking/truncation (may exceed terminal width)
+ *   --wrap             Wrap long cells to fit the table width (taller output)
+ *   --max-width <n>    Override the maximum table width (defaults to terminal width, capped at 120)
+ *   --inspect <tech>   Show a detailed view for one detected technology (works best with --wide or --wrap)
  */
 
 async function main() {
@@ -55,13 +61,28 @@ async function main() {
     payload = buildCleanReport(report);
   } else {
     payload = buildCleanReport(report); // default is meta-friendly clean format
-    // If you want the absolute minimal output, switch to buildSimpleReport().
-    // Keeping buildCleanReport as default matches typical CLI expectations.
   }
+
+  // Human formatter options
+  const maxWidthArg = getFlagValue(args, "--max-width");
+  const inspect = getFlagValue(args, "--inspect");
+
+  const terminalWidth =
+    Number.isFinite(process.stdout.columns) && process.stdout.columns > 0
+      ? process.stdout.columns
+      : 110;
+
+  const defaultMaxWidth = Math.min(120, Math.max(80, terminalWidth));
+
+  const humanOptions = {
+    mode: flags.has("--wide") ? "wide" : flags.has("--wrap") ? "wrap" : "truncate",
+    maxWidth: maxWidthArg ? clampInt(maxWidthArg, 40, 400) : defaultMaxWidth,
+    inspect: inspect ? String(inspect) : null,
+  };
 
   const output =
     format === "human"
-      ? formatHuman(payload)
+      ? formatHuman(payload, humanOptions)
       : format === "json-pretty"
         ? formatPretty(payload)
         : JSON.stringify(payload);
@@ -69,15 +90,21 @@ async function main() {
   process.stdout.write(output + "\n");
 }
 
+function clampInt(value, min, max) {
+  const n = Number.parseInt(String(value), 10);
+  if (!Number.isFinite(n)) return min;
+  return Math.max(min, Math.min(max, n));
+}
+
 function getFlagValue(args, flagName) {
-  // Support: --format human
+  // Support: --format human / --max-width 100 / --inspect "WordPress"
   const idx = args.indexOf(flagName);
   if (idx !== -1 && idx + 1 < args.length) {
     const v = args[idx + 1];
     if (v && !v.startsWith("--")) return v;
   }
 
-  // Support: --format=human
+  // Support: --format=human / --max-width=100 / --inspect=WordPress
   const withEq = args.find((a) => a.startsWith(flagName + "="));
   if (withEq) return withEq.split("=", 2)[1] || null;
 
@@ -107,16 +134,24 @@ Usage:
   node src/cli/index.js <url> [--format <json|json-pretty|human>] [--meta] [--raw]
 
 Flags:
-  --format <mode>  Output format: json (default), json-pretty, human
-  --human          Alias for --format human
-  --pretty         Alias for --format json-pretty (back-compat)
-  --meta           Include fetch/timing metadata (default behavior)
-  --raw            Print the full internal report (debug)
+  --format <mode>    Output format: json (default), json-pretty, human
+  --human            Alias for --format human
+  --pretty           Alias for --format json-pretty (back-compat)
+  --meta             Include fetch/timing metadata (default behavior)
+  --raw              Print the full internal analysis report (debug)
+
+Human output flags (only apply to --format human):
+  --wide             Disable truncation (may exceed terminal width)
+  --wrap             Wrap long cells to fit within table width
+  --max-width <n>    Override max table width (default: terminal width, capped at 120)
+  --inspect <tech>   Show a detailed view for one detected technology
 
 Examples:
   node src/cli/index.js https://react.dev --format human
-  node src/cli/index.js https://react.dev --human
-  node src/cli/index.js https://react.dev --pretty
+  node src/cli/index.js https://react.dev --human --wrap
+  node src/cli/index.js https://react.dev --human --wide
+  node src/cli/index.js https://react.dev --human --max-width 100
+  node src/cli/index.js https://react.dev --human --inspect "WordPress" --wide
   node src/cli/index.js https://example.com --raw --format json-pretty
 `;
   process.stdout.write(text.trim() + "\n");

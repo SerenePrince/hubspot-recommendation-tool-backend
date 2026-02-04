@@ -37,7 +37,7 @@ Verify:
 * Try CLI mode:
 
   ```bash
-  node src/cli/index.js <url> --pretty
+  npm run cli -- <url> --format json-pretty  # (alias: --format json-pretty  # (alias: --pretty))
   ```
 
 ---

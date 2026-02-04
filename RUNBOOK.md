@@ -94,7 +94,7 @@ npm run validate-config
 * Try the same URL via CLI:
 
   ```bash
-  node src/cli/index.js https://example.com --pretty
+  npm run cli -- https://example.com --format json-pretty  # (alias: --format json-pretty  # (alias: --pretty))
   ```
 
 ---

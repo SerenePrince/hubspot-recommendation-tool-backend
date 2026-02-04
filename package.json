@@ -9,6 +9,8 @@
   "scripts": {
     "dev:api": "node src/api/server.js",
     "cli": "node src/cli/index.js",
+    "cli:human": "node src/cli/index.js --format human",
+    "cli:pretty": "node src/cli/index.js --format json-pretty",
     "cli:tax": "node src/cli/taxonomy.js",
     "smoke": "node src/scripts/smokeTest.js",
     "validate-config": "node src/scripts/validateConfig.js",
