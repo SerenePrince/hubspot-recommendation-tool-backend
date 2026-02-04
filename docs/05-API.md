@@ -8,7 +8,7 @@ This document describes the HTTP API exposed by the backend service.
 
 ```text
 http://localhost:3001
-````
+```
 
 ---
 
@@ -36,7 +36,12 @@ Used by load balancers and orchestration systems to verify service health.
 
 ### `GET /analyze`
 
-Analyze a target website and return detected technologies and recommendations.
+Analyze a target website and return detected technologies and HubSpot recommendations.
+
+This endpoint is designed to be:
+
+1. **Simple for frontend developers** (stable schema, pre-grouped data, sensible defaults)
+2. **Useful for non-technical end users** (summary + top recommendations + traceability)
 
 ---
 
@@ -53,30 +58,165 @@ Analyze a target website and return detected technologies and recommendations.
 ### Example Request
 
 ```bash
-curl "http://localhost:3001/analyze?url=https://example.com&pretty=1"
+curl "http://localhost:3001/analyze?url=https://react.dev&pretty=1&includeMeta=1"
 ```
 
 ---
 
-### Successful Response (200)
+## Successful Response (200)
+
+The API returns a **clean, frontend-friendly** report.
+
+Key points:
+
+- `apiVersion` is a stable marker for frontend integrations.
+- `technologies[].hubspot.products` is **ordered primary-first** (high → medium → low; then stable first-seen).
+- `recommendations[].triggeredBySummary` is a human-readable explanation of why the recommendation appeared.
+
+Example (trimmed for readability):
 
 ```json
 {
   "ok": true,
-  "url": "https://example.com",
-  "finalUrl": "https://example.com/",
-  "technologies": [],
-  "byGroup": {},
-  "recommendations": [],
-  "summary": {}
+  "apiVersion": "2.0",
+  "url": "https://react.dev/",
+  "finalUrl": "https://react.dev/",
+  "technologies": [
+    {
+      "name": "Google Analytics",
+      "confidence": 100,
+      "version": null,
+      "categories": [{ "id": "analytics", "name": "Analytics" }],
+      "groups": [{ "id": "analytics", "name": "Analytics" }],
+      "hubspot": {
+        "primaryProduct": "Marketing Hub",
+        "products": [
+          {
+            "hubspotProduct": "Marketing Hub",
+            "priority": "high",
+            "title": "Unify analytics and attribution in HubSpot Marketing Hub",
+            "description": "Replace disconnected analytics with CRM-native reporting that tracks marketing to revenue impact."
+          },
+          {
+            "hubspotProduct": "Operations Hub",
+            "priority": "medium",
+            "title": "Operationalize analytics with HubSpot Operations Hub",
+            "description": "Sync analytics events into CRM properties."
+          }
+        ]
+      }
+    }
+  ],
+  "byGroup": {
+    "Analytics": [{ "name": "Google Analytics", "confidence": 100, "version": null }]
+  },
+  "recommendations": [
+    {
+      "title": "Unify analytics and attribution in HubSpot Marketing Hub",
+      "hubspotProduct": "Marketing Hub",
+      "priority": "high",
+      "description": "Replace disconnected analytics with CRM-native reporting that tracks marketing to revenue impact.",
+      "url": null,
+      "tags": [],
+      "triggeredBy": [
+        { "triggerType": "technology", "key": "Google Analytics", "matched": "Google Analytics" }
+      ],
+      "triggeredBySummary": "Tech: Google Analytics"
+    }
+  ],
+  "summary": {
+    "totals": {
+      "technologiesDetected": 6,
+      "categories": 6,
+      "groups": 5,
+      "recommendations": 8,
+      "mappedReplacements": {
+        "technologiesWithReplacements": 2,
+        "totalTechnologies": 6
+      }
+    },
+    "topRecommendations": [
+      {
+        "title": "Unify analytics and attribution in HubSpot Marketing Hub",
+        "hubspotProduct": "Marketing Hub",
+        "priority": "high",
+        "description": "Replace disconnected analytics with CRM-native reporting that tracks marketing to revenue impact.",
+        "triggeredBySummary": "Tech: Google Analytics"
+      }
+    ]
+  },
+  "meta": {
+    "fetch": { "status": 200 },
+    "timings": { "totalMs": 123 }
+  }
 }
 ```
 
 ---
 
-### Error Responses
+## Response Structure
 
-#### 400 – Invalid Request
+### Top-level fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `ok` | boolean | `true` on success |
+| `apiVersion` | string | Response schema version (`2.0`) |
+| `url` | string | Normalized input URL |
+| `finalUrl` | string | Final URL after redirects |
+| `technologies` | array | Detected technologies (frontend primary payload) |
+| `byGroup` | object | Technologies grouped by functional group |
+| `recommendations` | array | HubSpot recommendations with traceability |
+| `summary` | object | Counts + top recommendations |
+| `meta` | object? | Optional fetch/timing info when `includeMeta=1` |
+
+---
+
+### `technologies[]`
+
+Each technology includes a `hubspot` object for easy UI rendering:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `name` | string | Technology name |
+| `confidence` | number | Detection confidence |
+| `version` | string? | Version when detected |
+| `categories` | array | Slim taxonomy list `{id,name}` |
+| `groups` | array | Slim taxonomy list `{id,name}` |
+| `hubspot.primaryProduct` | string? | The primary HubSpot replacement (if available) |
+| `hubspot.products` | array | Ordered replacements (primary-first) |
+
+---
+
+### `recommendations[]`
+
+Recommendations are already sorted by priority (high → medium → low).
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `title` | string | Recommendation title |
+| `hubspotProduct` | string | HubSpot product being recommended |
+| `priority` | string | `high`, `medium`, or `low` |
+| `description` | string? | Short explanation for UI |
+| `url` | string? | Optional link for learn-more |
+| `tags` | array | Optional classification tags |
+| `triggeredBy` | array | Traceability: what produced this recommendation |
+| `triggeredBySummary` | string? | Human-readable summary for UI |
+
+---
+
+### `summary`
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `totals` | object | Counts + mapping coverage |
+| `topRecommendations` | array | Top 5 recommendations for quick UI display |
+
+---
+
+## Error Responses
+
+### 400 – Invalid Request
 
 Returned when:
 
@@ -94,66 +234,22 @@ Returned when:
 
 ---
 
-#### 404 – Not Found
+### 404 – Not Found
 
 Returned for unknown endpoints.
 
 ---
 
-#### 500 – Internal Error
+### 500 – Internal Error
 
 Returned only for unexpected server errors.
-
----
-
-## Response Structure
-
-### `technologies`
-
-Detected technologies with metadata:
-
-* name
-* confidence
-* version (optional)
-* description
-* website
-* icon
-* categories
-* groups
-
----
-
-### `byGroup`
-
-Technologies grouped by functional group.
-
----
-
-### `recommendations`
-
-HubSpot product recommendations generated from detected technologies.
-
----
-
-### `summary`
-
-High-level counts by group and category.
-
----
-
-### `meta` (optional)
-
-Included when `includeMeta=1`:
-
-* fetch metadata
-* timing information
 
 ---
 
 ## Notes
 
 * API is stateless
-* No authentication required
+* No authentication required (add it at the gateway if needed)
 * Output is deterministic given the same input and dataset
 
 ---
@@ -162,4 +258,5 @@ Included when `includeMeta=1`:
 
 * `06-CLI.md`
 * `07-RECOMMENDATIONS.md`
+* `12-CLIENT-REPORT-GUIDE.md`
 * `09-DEPLOYMENT.md`

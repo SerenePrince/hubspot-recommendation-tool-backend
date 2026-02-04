@@ -72,3 +72,15 @@ When reviewing the code against the report:
 
 This repository is intentionally conservative in its structure to preserve
 traceability between implementation and documentation.
+
+## API Output (Frontend)
+
+When using the API (`GET /analyze`), the response is designed for direct UI rendering:
+
+- `summary.topRecommendations` provides the top items for a “Recommended HubSpot Products” panel.
+- `technologies[].hubspot.primaryProduct` is the primary replacement (if available).
+- `technologies[].hubspot.products` is ordered primary-first.
+- `recommendations[].triggeredBySummary` can be displayed as “Why am I seeing this?” helper text.
+- `summary.totals.mappedReplacements` helps explain why some technologies may not have a mapped replacement yet.
+
+See `05-API.md` for the full response schema.
